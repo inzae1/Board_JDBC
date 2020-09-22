@@ -1,11 +1,12 @@
 package DAO;
 
-public class MemberVO {
+public class UserVO {
 	private String userID;
 	private String userPassword;
 	private String userName;
 	private String userGender;
 	private String userEmail;
+	private String reg_date;
 	
 	public String getUserID() {
 		return userID;
@@ -37,4 +38,12 @@ public class MemberVO {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+	public String getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
+	}
+	
+	
 }
