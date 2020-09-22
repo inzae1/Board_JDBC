@@ -15,7 +15,7 @@ public class MemberDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
@@ -37,12 +37,12 @@ public class MemberDAO {
 		}
 		return -2; // 데이터베이스 오류를 의미
 	}
-	
+
 	// 회원가입
 	public int join(MemberVO member) {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, user, password);
@@ -56,6 +56,7 @@ public class MemberDAO {
 			return ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		}
 		return -1; // DB 오류
 	}
