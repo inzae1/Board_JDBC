@@ -51,6 +51,57 @@ public class UserDAO {
 		
 	}
 	
+	public String findUserIdByEmail(String email) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String id = null;
+		
+		String sql = "select userId from user where userEmail = ?";
+		
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				id = rs.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return id;
+	}
+	
+	public String findUserPasswordById(String id) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String password = null;
+		
+		String sql = "select userPassword from user where userId = ?";
+		
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				password = rs.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return password;
+	}
+	
+	
+	
+	
+	
+	
 	// 로그인을 시도하는 함수
 		public int getUser(String userID, String userPassword) {
 			Connection conn = null;
