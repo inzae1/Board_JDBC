@@ -28,7 +28,7 @@
 				script.println("</script>");
 			} else{
 				MemberVO member = new MemberVO();
-				MemberDAO memberDAO = new MemberDAO(); //인스턴스생성
+				MemberDAO memberDAO = new MemberDAO(); //인스턴스 생성
 				int result = memberDAO.join(member);				
 				if(result == -1){ // 아이디가 기본키. 중복되면 오류.
 					PrintWriter script = response.getWriter();

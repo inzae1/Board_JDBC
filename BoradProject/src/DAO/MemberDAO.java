@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import common.DBUtil;
+
 public class MemberDAO {
 	static final String url = "jdbc:mysql://127.0.0.1:3306/dongjindb?serverTimezone=UTC";
 	static final String user = "dongjin";
@@ -35,7 +37,7 @@ public class MemberDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -2; // 데이터베이스 오류를 의미
+		return -2; // DB 오류
 	}
 	
 	// 회원가입
@@ -44,8 +46,7 @@ public class MemberDAO {
 		PreparedStatement ps = null;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection(url, user, password);
+			conn = DBUtil.getConnection();
 			String SQL = "INSERT INTO USER (userID, userPassword, userName, userGender, userEmail) VALUES (?,?,?,?,?)";
 			ps = conn.prepareStatement(SQL);
 			ps.setString(1, member.getUserID());
