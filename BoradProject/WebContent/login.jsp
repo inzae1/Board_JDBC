@@ -33,6 +33,5 @@
 		<a href=?joinMember style="font-size:10px; color:gray">회원가입</a>	
 	</form>
 	</fieldset>
-	
 </body>
 </html>
