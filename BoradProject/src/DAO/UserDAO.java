@@ -34,14 +34,13 @@ public class UserDAO {
 	}
 	
 	// 로그인을 시도하는 함수
-		public int login(String userID, String userPassword) {
+		public int getUser(String userID, String userPassword) {
 			Connection conn = null;
 			PreparedStatement ps = null;
 			ResultSet rs = null;
 			
 			try {
-				Class.forName("com.mysql.cj.jdbc.Driver");
-				conn = DriverManager.getConnection(url, user, password);
+				conn = DBUtil.getConnection();
 				String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
 				ps = conn.prepareStatement(SQL);
 				ps.setString(1, userID);
