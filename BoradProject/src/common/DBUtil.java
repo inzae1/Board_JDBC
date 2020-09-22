@@ -7,16 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBUtil {
-<<<<<<< HEAD
-	static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver"; //test
-	static final String url = "jdbc:mysql://127.0.0.1:3306/dongjindb?serverTimezone=UTC"; //여기하고
-	static final String user = "dongjin"; //여기 수정해주세요
 
-=======
 	static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
 	static final String url = "jdbc:mysql://127.0.0.1:3306/dongjindb?serverTimezone=UTC";
 	static final String user = "dongjin";
->>>>>>> 1d316b40b109a059afb5a2bbeeee0bf841fa48d9
 	static final String password = "dongjinpw";
 	// sdkmsdlksmdlksmdlksmdaskd akjd ajdajsd
 	public static Connection getConnection() throws Exception{
