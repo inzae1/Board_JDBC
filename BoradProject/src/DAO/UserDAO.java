@@ -33,7 +33,7 @@ public class UserDAO {
 		return -1; // DB 오류
 	}
 	
-	// 회원정보 수정
+	// 회원삭제
 	public int deleteUser(UserVO user) {
 		Connection conn = null;
 		PreparedStatement ps = null;
