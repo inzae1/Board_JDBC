@@ -28,8 +28,8 @@
 		<input style="password" name="pw" size=20 label=loginPw placeholder="Password"><br>
 		<input type="submit" value="로그인" style="height:40x; width:240px;"><br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href=?findId style="font-size:10px; color:gray" >아이디 찾기</a> 
-		<a href=?findId style="font-size:10px; color:gray" >/비밀번호 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="findId.jsp" style="font-size:10px; color:gray" >아이디 찾기</a> 
+		<a href="findPassword.jsp" style="font-size:10px; color:gray" >/비밀번호 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href=?joinMember style="font-size:10px; color:gray">회원가입</a>	
 	</form>
 	</fieldset>
