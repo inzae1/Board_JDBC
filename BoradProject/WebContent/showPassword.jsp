@@ -11,16 +11,18 @@
 		String password = (String) request.getAttribute("password");
 	if (password != null) {
 	%>
-	<label>password: <%=password%></label>
+	<label>귀하의 패스워드는 <%=password%>입니다.</label>
 	<%
 		} else {
 	%>
-	<h2>password를 찾을 수 없습니다.</h2>
+	<script>
+	alert('가입되어있는 ID가 아닙니다.');
+	history.back();
+	</script>
 	<%
 		}
 	%>
 	<a href="login.jsp">
-		<button>로그인</button>
-	</a>
+		<button>로그인하러가기</button>
 </body>
 </html>

@@ -10,17 +10,19 @@
 		String id = (String) request.getAttribute("id");
 	if (id != null) {
 	%>
-	<label>id: <%=id%></label>
+	<label>귀하의 ID는 <%=id%> 입니다. </label>
 	<%
 		} else {
 	%>
-	<h2>이메일을 찾을 수 없습니다.</h2>
+	<script>
+	alert('가입되어있지 않은 이메일 입니다.');
+	history.back();
+	</script>
 	<%
 		}
 	%>
-	<a href="login.jsp">
-		<button>로그인</button>
-	</a>
+ 	<a href="login.jsp">
+		<button>로그인하러가기</button>
 
 </body>
 </html>
