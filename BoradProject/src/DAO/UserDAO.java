@@ -13,7 +13,7 @@ public class UserDAO {
 	static final String password = "dongjinpw";
 
 	// 회원가입
-	public int addUser(UserVO member) {
+	public int addUser(UserVO user) {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		
@@ -21,16 +21,34 @@ public class UserDAO {
 			conn = DBUtil.getConnection();
 			String SQL = "INSERT INTO USER (userID, userPassword, userName, userGender, userEmail) VALUES (?,?,?,?,?)";
 			ps = conn.prepareStatement(SQL);
-			ps.setString(1, member.getUserID());
-			ps.setString(2, member.getUserPassword());
-			ps.setString(3, member.getUserName());
-			ps.setString(4, member.getUserGender());
-			ps.setString(5, member.getUserEmail());
+			ps.setString(1, user.getUserID());
+			ps.setString(2, user.getUserPassword());
+			ps.setString(3, user.getUserName());
+			ps.setString(4, user.getUserGender());
+			ps.setString(5, user.getUserEmail());
 			return ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1; // DB 오류
+	}
+	
+	// 회원정보 수정
+	public int deleteUser(UserVO user) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			String SQL = "delete from user where userID = ?";
+			ps = conn.prepareStatement(SQL);
+			ps.setString(1, user.getUserID());
+			return ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // DB 오류
+		
 	}
 	
 	// 로그인을 시도하는 함수
