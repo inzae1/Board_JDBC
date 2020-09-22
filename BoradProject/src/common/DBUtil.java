@@ -12,15 +12,9 @@ public class DBUtil {
 	static final String url = "jdbc:mysql://192.168.70.73:3306/dongjindb?serverTimezone=UTC";
 	static final String user = "dongjin";
 	static final String password = "dongjinpw";
-<<<<<<< HEAD
 	
 	public static Connection getConnection() throws Exception{
-		return getConnection(url, user, password);		
-=======
-
-	public static Connection getConnection() throws Exception {
-		return getConnection(url, user, password);
->>>>>>> 76166250b91f9bdf3c1e36a096b066b46b729e9f
+		return getConnection(url, user, password);	
 	}
 
 	public static Connection getConnection(String url, String user, String password) throws Exception {
