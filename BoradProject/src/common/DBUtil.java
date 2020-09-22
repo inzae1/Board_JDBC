@@ -9,7 +9,6 @@ import java.sql.SQLException;
 public class DBUtil {
 	static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";//test 333333
 	static final String url = "jdbc:mysql://127.0.0.1:3306/inzaedb?serverTimezone=UTC"; //여기하고
-	static final String user = "inzae"; //여기 수정해주세요
 	static final String password = "0312";
 	//�젒�냽 
 	public static Connection getConnection() throws Exception{
