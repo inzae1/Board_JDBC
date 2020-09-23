@@ -48,11 +48,11 @@
 							<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
 						</div>
 						비밀번호 : <div class="form-group">
-							<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
+							<input type="password" class="form-control" id="userPassword" placeholder="비밀번호" name="userPassword" maxlength="20">
 						</div>
 						비밀번호 확인 : <div class="form-group">
-							<input type="password" class="form-control" placeholder="비밀번호 확인" name="userPassword" maxlength="20">
-							<input type="button" value="확인" onclick="alert('일치합니다.')">
+							<input type="password" class="form-control" id="checkPassword" placeholder="비밀번호 확인" name="checkPassword" maxlength="20">
+							<input type="button" value="확인" onclick="check()">
 						</div>
 						이름 : <div class="form-group">
 							<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
@@ -75,6 +75,19 @@
 				</div>
 			</div>
 		</div>
+		
+		<script >
+			const userPassword  = document.getElementById("userPassword");
+			const checkPassowrd = document.getElementById("checkPassword");
+			const check = () => {
+				if(userPassword.value === checkPassword.value) {
+					alert("일치합니다.");
+				} else {
+					alert("일치하지 않습니다.");
+					
+				}
+			}
+		</script>
 		
 		<!-- <script src="https://code.jquery.com/jquery-1.11.3.js" integrity="sha256-IGWuzKD7mwVnNY01LtXxq3L84Tm/RJtNCYBfXZw3Je0=" crossorigin="anonymous"></script> -->
 		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qcyjSMfHjOMaLKfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->

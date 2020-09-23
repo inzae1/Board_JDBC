@@ -24,16 +24,30 @@
 	<body>
 		<%
 			String userID = null;
+			String userPassword = request.getParameter("userPassword"); 
+			String checkPassword = request.getParameter("checkPassword");
+			
 			if(session.getAttribute("userID") != null){
 				userID = (String)session.getAttribute("userID");
 			}
-			if(userID != null){
+			
+			/* if(userID != null){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('이미 로그인 되어 있습니다.')");
 				script.println("location.href='main.jsp'");
 				script.println("</script>");
+			} */
+			
+			
+			if(userPassword != checkPassword) {
+				PrintWriter script = response.getWriter();
+				script.println("<script>");
+				script.println("alert('비밀번호가 틀렸습니다.')");
+				script.println("history.back()='main.jsp'");
+				script.println("</script>");
 			}
+			
 		
 			if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null
 					|| user.getUserGender() == null || user.getUserEmail() == null){
@@ -48,7 +62,11 @@
 				if(result == -1){
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
+<<<<<<< HEAD
 					script.println("alert('존재하는 아이디입니다.')");
+=======
+					script.println("alert('아이디가 이미 존재합니다.')");
+>>>>>>> a5947131d40ba808bcfea263544f8c0247da78a7
 					script.println("history.back()");
 					script.println("</script>");
 				} else {
