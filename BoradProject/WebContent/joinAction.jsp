@@ -50,7 +50,7 @@
 				script.println("alert('모두 입력이 되었는지 확인해 주세요.')");
 				script.println("history.back()");
 				script.println("</script>");
-			}
+			/* 
 				
 			else if(userPassword != checkPassword) {
 					PrintWriter script = response.getWriter();
@@ -58,7 +58,7 @@
 					script.println("alert('비밀번호가 틀렸습니다.')");
 					script.println("history.back()");
 					script.println("</script>");
-			
+			 */
 			} else {
 				UserDAO userDAO = new UserDAO();
 				int result = userDAO.addUser(user);
@@ -72,6 +72,7 @@
 					session.setAttribute("userID", user.getUserID());
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
+					script.println("alert('가입이 완료되었습니다.')");
 					script.println("location.href='login.jsp'");
 					script.println("</script>");
 				}

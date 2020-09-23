@@ -78,12 +78,14 @@
 		
 		<script >
 			const userPassword  = document.getElementById("userPassword");
-			const checkPassowrd = document.getElementById("checkPassword");
+			const checkPassword = document.getElementById("checkPassword");
 			const check = () => {
 				if(userPassword.value === checkPassword.value) {
-					document.write("<p>일치합니다</p>]")
+					alert("일치합니다.");
+					checkPassword.disabled=true;
 				} else {
 					alert("일치하지 않습니다.");
+					checkPassword.value = "";
 					
 				}
 			}
