@@ -14,14 +14,10 @@
 	<body>
 		<%
 			String userID = null;
-<<<<<<< HEAD
 			if(session.getAttribute("id") != null){
 				userID = (String)session.getAttribute("id");
-=======
-			
 			if(session.getAttribute("userID") != null){
 				userID = (String)session.getAttribute("userID");
->>>>>>> ce71a3d9d1e392e4dcff58ed1e730b12a381d924
 			}
 			
 			int board_no = 0;
@@ -116,18 +112,14 @@
 				<%
 					if(userID != null && userID.equals(boardVO.getUserID())){
 				%>
-				<a href="update.jsp?bbsID=<%=board_no %>" class="btn btn-primary">수정</a>
-				<a href="deleteAction.jsp?bbsID=<%=board_no %>" class="btn btn-primary">삭제</a>
+					<a href="update.jsp?bbsID=<%=board_no %>" class="btn btn-primary">수정</a>
+					<a href="deleteAction.jsp?bbsID=<%=board_no %>" class="btn btn-primary">삭제</a>
 				<%
 					}
 				%>
 			</div>
 		</div>
 		
-		
-		
-		<!-- <script src="https://code.jquery.com/jquery-1.11.3.js" integrity="sha256-IGWuzKD7mwVnNY01LtXxq3L84Tm/RJtNCYBfXZw3Je0=" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qcyjSMfHjOMaLKfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  		<script src="js/bootstrap.js"></script>
 	</body>

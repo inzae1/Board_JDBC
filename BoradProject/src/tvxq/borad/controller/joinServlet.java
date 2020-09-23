@@ -1,4 +1,4 @@
-package Servlet;
+package tvxq.borad.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.UserDAO;
-import DAO.UserVO;
+import tvxq.borad.dao.UserDAO;
+import tvxq.borad.vo.UserVO;
 
 /**
  * Servlet implementation class joinServlet

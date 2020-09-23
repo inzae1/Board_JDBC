@@ -1,8 +1,7 @@
-package Servlet;
+package tvxq.borad.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.channels.SeekableByteChannel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.Session;
-
-import DAO.BoardDAO;
-import DAO.BoardVO;
+import tvxq.borad.dao.BoardDAO;
+import tvxq.borad.vo.BoardVO;
 
 /**
  * Servlet implementation class writeServlet

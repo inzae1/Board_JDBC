@@ -1,13 +1,13 @@
 <%@page import="tvxq.borad.dao.UserDAO"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="tvxq.borad.dao.UserVO"%>
+<%@page import="tvxq.borad.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
 
-<jsp:useBean id="user" class="tvxq.borad.dao.UserVO" scope="page" />
+<jsp:useBean id="user" class="tvxq.borad.vo.UserVO" scope="page" />
 <jsp:setProperty name="user" property="userID" />
 <jsp:setProperty name="user" property="userPassword" /> 
 <jsp:setProperty name="user" property="userName" />

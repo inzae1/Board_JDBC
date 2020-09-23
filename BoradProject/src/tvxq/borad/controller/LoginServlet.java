@@ -11,16 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-<<<<<<< HEAD:BoradProject/src/Servlet/LoginServlet.java
-import DAO.UserDAO;
-import DAO.UserVO;
-=======
 import tvxq.borad.dao.UserDAO;
->>>>>>> ce71a3d9d1e392e4dcff58ed1e730b12a381d924:BoradProject/src/tvxq/borad/controller/LoginServlet.java
-
-/**
- * Servlet implementation class LoginServlet
- */
+import tvxq.borad.vo.UserVO;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {

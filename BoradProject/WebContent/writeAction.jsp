@@ -6,7 +6,7 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 
-<jsp:useBean id="board" class="tvxq.borad.dao.BoardVO" scope="page" />
+<jsp:useBean id="board" class="tvxq.borad.vo.BoardVO" scope="page" />
 <jsp:setProperty name="board" property="title" />
 <jsp:setProperty name="board" property="content" />
 
