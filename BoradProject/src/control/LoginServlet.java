@@ -29,12 +29,19 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("pw");
 
 		UserDAO dao = new UserDAO();
+		PrintWriter out = response.getWriter();
 		int user = dao.getUser(id, pw);
 		
 		if (user == -1) {
 			// 아이디가 없을 때 회원 가입으로 가기 response.sendRedirect()
+			out.println("<script>");
+			out.println("alert('가입되지 않은 아이디입니다.)");
+			out.println("</script>");
 		} else if (user == 0) {
 			// 비밀번호 불일치 할 때 비밀번호 찾기로 가기 response.sendRedirect() 
+			out.println("<script>");
+			out.println("alert('비밀번호가 틀렸습니다.)");
+			out.println("</script>");
 		} else if (user == 1) {
 			// 로그인 성공 시 자유게시판 페이지로 이동 response.sendRedirect("main.jsp")
 			session.setAttribute(id, pw);
