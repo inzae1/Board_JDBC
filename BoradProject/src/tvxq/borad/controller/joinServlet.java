@@ -23,7 +23,7 @@ public class joinServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.setContentType("text/html; charset=utf-8");
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		
 		UserDAO userdao = new UserDAO();
@@ -32,6 +32,12 @@ public class joinServlet extends HttpServlet {
 		String userID = null;
 		String userPassword = request.getParameter("userPassword"); 
 		String checkPassword = request.getParameter("checkPassword");
+		
+		user.setUserID(request.getParameter("id"));
+		user.setUserPassword(userPassword);
+		user.setUserName(request.getParameter("name"));
+		user.setUserGender(request.getParameter("gender"));
+		user.setUserEmail(request.getParameter("email"));
 		
 		if(session.getAttribute("id") != null){
 			userID = (String)session.getAttribute("id");
@@ -53,7 +59,6 @@ public class joinServlet extends HttpServlet {
 				script.println("history.back()");
 				script.println("</script>");
 			} else {
-				session.setAttribute("userID", user.getUserID());
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('가입이 완료되었습니다.')");
