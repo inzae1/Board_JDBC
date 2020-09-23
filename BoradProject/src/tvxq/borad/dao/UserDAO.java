@@ -8,11 +8,68 @@ import java.sql.ResultSet;
 import tvxq.borad.common.DBUtil;
 import tvxq.borad.vo.UserVO;
 
+
 public class UserDAO {
 	static final String url = "jdbc:mysql://192.168.70.73:3306/dongjindb?serverTimezone=UTC";
 	static final String user = "dongjin";
 	static final String password = "dongjinpw";
 
+	
+	//회원정보 얻기
+	public UserVO getUserInfo(String userID) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		UserVO user = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			String SQL = "SELECT userID, userPassword, userName, userGender, userEmail FROM USER WHERE userID = ?";
+			ps = conn.prepareStatement(SQL);
+			ps.setString(1, userID);
+			rs = ps.executeQuery();
+
+			if(rs.next()) {
+				user = new UserVO();
+				user.setUserID(rs.getString(1));
+				user.setUserPassword(rs.getString(2));
+				user.setUserName(rs.getString(3));
+				user.setUserGender(rs.getString(4));
+				user.setUserEmail(rs.getString(5));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(conn, ps, rs);
+		}
+		
+		return user;
+	}
+	
+	
+	// 회원정보 수정
+	public int updateUser(UserVO user) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			conn = DBUtil.getConnection();
+			String SQL = "UPDATE USER SET userPassword = ?, userName = ?, userGender = ?, userEmail = ? WHERE userID = ?";
+			
+			ps = conn.prepareStatement(SQL);
+			ps.setString(1, user.getUserPassword());
+			ps.setString(2, user.getUserName());
+			ps.setString(3, user.getUserGender());
+			ps.setString(4, user.getUserEmail());
+			ps.setString(5, user.getUserID());
+			return ps.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // DB오류
+	}
+	
 	// 회원가입
 	public int addUser(UserVO user) {
 		Connection conn = null;
