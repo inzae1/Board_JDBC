@@ -62,11 +62,7 @@
 				if(result == -1){
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-<<<<<<< HEAD
 					script.println("alert('존재하는 아이디입니다.')");
-=======
-					script.println("alert('아이디가 이미 존재합니다.')");
->>>>>>> a5947131d40ba808bcfea263544f8c0247da78a7
 					script.println("history.back()");
 					script.println("</script>");
 				} else {
