@@ -40,13 +40,7 @@
 			} */
 			
 			
-			if(userPassword != checkPassword) {
-				PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("alert('비밀번호가 틀렸습니다.')");
-				script.println("history.back()='main.jsp'");
-				script.println("</script>");
-			}
+			
 			
 		
 			if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null
@@ -56,6 +50,15 @@
 				script.println("alert('모두 입력이 되었는지 확인해 주세요.')");
 				script.println("history.back()");
 				script.println("</script>");
+			}
+				
+			else if(userPassword != checkPassword) {
+					PrintWriter script = response.getWriter();
+					script.println("<script>");
+					script.println("alert('비밀번호가 틀렸습니다.')");
+					script.println("history.back()");
+					script.println("</script>");
+			
 			} else {
 				UserDAO userDAO = new UserDAO();
 				int result = userDAO.addUser(user);
