@@ -128,7 +128,7 @@ public class BoardDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from bbs where bbsID = ?";
+		String sql = "select * from board where board_no = ?";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
