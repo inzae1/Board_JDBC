@@ -124,7 +124,7 @@ public class BoardDAO {
 		return false;
 	}
 	
-	public BoardVO getBbs(int board_no) {
+	public BoardVO getBoardVO(int board_no) {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -149,5 +149,32 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public boolean updateBoard(BoardVO board) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		boolean resultFlag = false;
+		String sql = "update board set title=?, content=?, views=?, likes=? where board_no=?";
+		
+		
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, board.getTitle());
+			ps.setString(2, board.getContent());
+			ps.setInt(3, board.getViews());
+			ps.setInt(4, board.getLikes());
+			ps.setInt(5, board.getBoard_no());
+			
+			int count = ps.executeUpdate();
+			if (count == 1) {
+				resultFlag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(conn, ps);
+		}
+		return resultFlag;
 	}
 }
