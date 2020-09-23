@@ -26,7 +26,7 @@
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('유효하지 않은 글입니다.')");
-				script.println("location.href='main.jsp'");
+				script.println("location.href='boardForm.jsp'");
 				script.println("</script>");
 			}
 			BoardVO boardVO = new BoardDAO().getBoard(board_no);
@@ -45,7 +45,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="main.jsp">메인</a></li>
-					<li class="active"><a href="bbs.jsp">게시판</a></li>
+					<li class="active"><a href="boardForm.jsp">게시판</a></li>
 				</ul>
 				<%
 					// 로그인이 되어 있지 않다면
@@ -106,7 +106,7 @@
 						</tr>
 					</tbody>
 				</table>
-				<a href="main.jsp" class="btn btn-primary">목록</a>
+				<a href="boardForm.jsp" class="btn btn-primary">목록</a>
 				<%
 					if(userID != null && userID.equals(boardVO.getUserID())){
 				%>

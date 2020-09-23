@@ -24,12 +24,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>		
 				</button>
-				<a class="navbar-brand" href="main.jsp">JSP 게시판</a>
+				<a class="navbar-brand" href="boardForm.jsp">JSP 게시판</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="main.jsp">메인</a></li>
-					<li class="active"><a href="bbs.jsp">게시판</a></li>
+					<li class="active"><a href="boardForm.jsp">게시판</a></li>
 				</ul>
 				<%
 					// 로그인이 되어 있지 않다면

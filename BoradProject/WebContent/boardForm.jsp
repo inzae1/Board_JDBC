@@ -61,7 +61,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="main.jsp">메인</a></li>
-					<li class="active"><a href="bbs.jsp">게시판</a></li>
+					<li class="active"><a href="boardForm.jsp">게시판</a></li>
 				</ul>
 				<%
 					// 로그인이 되어 있지 않다면
@@ -137,11 +137,11 @@
         <%
 			if(pageNumber != 1){
 		%>
-				<a href="main.jsp?pageNumber=<%=pageNumber - 1 %>" class="btn btn-success btn-arraw-left">이전</a>
+				<a href="boardForm.jsp?pageNumber=<%=pageNumber - 1 %>" class="btn btn-success btn-arraw-left">이전</a>
 		<%
 			}if(boardDAO.nextPage(pageNumber + 1)){
 		%>
-				<a href="main.jsp?pageNumber=<%=pageNumber + 1 %>" class="btn btn-success btn-arraw-left">다음</a>
+				<a href="boardForm.jsp?pageNumber=<%=pageNumber + 1 %>" class="btn btn-success btn-arraw-left">다음</a>
 		<%
 			}
 		%>
