@@ -125,6 +125,8 @@ public class UserDAO {
 				return -1; // 아이디가 없음 오류
 			} catch (Exception e) {
 				e.printStackTrace();
+			}finally {
+				DBUtil.close(conn, ps, rs);
 			}
 			return -2; // DB 오류
 		}

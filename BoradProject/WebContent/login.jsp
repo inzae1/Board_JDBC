@@ -19,13 +19,13 @@
 	<br>
 	<fieldset>
 	
-	<form action="login" method=post >
+	<form action="loginAction.jsp" method=post >
 		<br>
 		<label for="loginId" style="font-size:15px">아이디&nbsp;&nbsp;&nbsp;</label>
-		<input style="text" name="id" size=20 label=loginId placeholder="ID"><br>
+		<input style="text" name="userID" size=20 label=loginId placeholder="ID"><br>
 			
 		<label for="loginPw" style="font-size:15px">비밀번호</label>
-		<input type="password" name="pw" maxlength='20' size=20 label=loginPw placeholder="Password"><br><br>
+		<input type="password" name="userPassword" maxlength='20' size=20 label=loginPw placeholder="Password"><br><br>
 		<input type="submit" value="로그인" style="height:40x; width:240px;"><br>
 		&nbsp;&nbsp;
 		<a href=findId.jsp style="font-size:10px; color:gray" >아이디 찾기</a> 

@@ -1,7 +1,7 @@
 package DAO;
 
 public class BoardVO {
-	private int no;
+	private int board_no;
 	private String userID;
 	private String title;
 	private String content;
@@ -9,11 +9,12 @@ public class BoardVO {
 	private int likes;
 	private String reg_date;
 	
-	public int getNo() {
-		return no;
+	
+	public int getBoard_no() {
+		return board_no;
 	}
-	public void setNo(int no) {
-		this.no = no;
+	public void setBoard_no(int board_no) {
+		this.board_no = board_no;
 	}
 	public String getUserID() {
 		return userID;

@@ -1,10 +1,14 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.BoardDAO"%>
 <%@page import="DAO.BoardVO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ 
 <!DOCTYPE html>
-<title>전체 게시글</title>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale="1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<title>전체 게시글</title>
     
     <style type="text/css">
         #wrap {
@@ -31,7 +35,6 @@
             location.href="BoardWriteForm.jsp";
         }
     </script>
-    
 </head>
 <body>    
  <%
@@ -44,6 +47,54 @@
 		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
 	}
 %>
+<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						aria-expanded="false">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>		
+				</button>
+				<a class="navbar-brand" href="main.jsp">JSP 게시판</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="main.jsp">메인</a></li>
+					<li class="active"><a href="bbs.jsp">게시판</a></li>
+				</ul>
+				<%
+					// 로그인이 되어 있지 않다면
+					if(userID == null){
+				%>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" role="button"
+							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class="active"><a href="login.jsp">로그인</a></li>
+							<li><a href="join.jsp">회원가입</a></li>
+						</ul>
+					</li>
+				</ul>
+				<%
+					} else {
+				%>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" role="button"
+							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">회원관리<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="logoutAction.jsp">로그아웃</a></li>
+						</ul>
+					</li>
+				</ul>
+				<%
+					}
+				%>
+			</div>
+		</nav>
+
 <div id="wrap">
     <br>
     <div id="topForm">
@@ -71,9 +122,9 @@
 					for(int i = 0; i < list.size(); i++){
 				%>
 					<tr>
-						<td><%=list.get(i).getNo() %></td>
+						<td><%=list.get(i).getBoard_no() %></td>
 						<td><%=list.get(i).getUserID() %></td>
-						<td><a href="view.jsp?bbsID=<%=list.get(i).getNo()%>"><%=list.get(i).getTitle() %></a></td>
+						<td><a href="view.jsp?board_no=<%=list.get(i).getBoard_no()%>"><%=list.get(i).getTitle() %></a></td>
 						<td><%=list.get(i).getReg_date() %></td>
 						<td><%=list.get(i).getViews() %></td>
 						<td><%=list.get(i).getLikes() %></td>
@@ -113,6 +164,7 @@
         </form>    
     </div>
 </div>    
- 
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+ <script src="js/bootstrap.js"></script>
 </body>
 </html>

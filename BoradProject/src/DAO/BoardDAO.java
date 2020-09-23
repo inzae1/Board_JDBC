@@ -10,29 +10,29 @@ import common.DBUtil;
 
 public class BoardDAO {
 	
-	public String getDate() {
-		Connection conn = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		String sql = "select reg_date from board";
-		try {
-			conn = DBUtil.getConnection();
-			ps = conn.prepareStatement(sql);
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				return rs.getString(1);
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return ""; // 데이터베이스 오류
-	}
+//	public String getDate() {
+//		Connection conn = null;
+//		PreparedStatement ps = null;
+//		ResultSet rs = null;
+//		String sql = "select reg_date from board";
+//		try {
+//			conn = DBUtil.getConnection();
+//			ps = conn.prepareStatement(sql);
+//			rs = ps.executeQuery();
+//			if(rs.next()) {
+//				return rs.getString(1);
+//			}
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		return ""; // 데이터베이스 오류
+//	}
 	
 	public int getNext() {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select no from board order by no desc";
+		String sql = "select board_no from board order by board_no desc";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -51,7 +51,7 @@ public class BoardDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "insert into board values (?,?,?,?,?,?,?)";
+		String sql = "insert into board (board_no, userID, title, content, views, likes) values (?,?,?,?,?,?)";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -61,7 +61,6 @@ public class BoardDAO {
 			ps.setString(4, content);
 			ps.setInt(5, getViews());
 			ps.setInt(6, getLikes());
-			ps.setNString(7, getDate());
 			return ps.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -81,7 +80,7 @@ public class BoardDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from board where no < ? order by no desc limit 10";
+		String sql = "select * from board where board_no < ? order by board_no desc limit 10";
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>(); 
 		try {
 			conn = DBUtil.getConnection();
@@ -90,7 +89,7 @@ public class BoardDAO {
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				BoardVO board = new BoardVO();
-				board.setNo(rs.getInt(1));
+				board.setBoard_no(rs.getInt(1));
 				board.setUserID(rs.getString(2));
 				board.setTitle(rs.getString(3));
 				board.setContent(rs.getString(4));
@@ -109,7 +108,7 @@ public class BoardDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from board where no < ? order by no desc limit 10";
+		String sql = "select * from board where board_no < ? order by board_no desc limit 10";
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>(); 
 		try {
 			conn = DBUtil.getConnection();
@@ -125,7 +124,7 @@ public class BoardDAO {
 		return false;
 	}
 	
-	public BoardVO getBbs(int no) {
+	public BoardVO getBbs(int board_no) {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -133,11 +132,11 @@ public class BoardDAO {
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, no);
+			ps.setInt(1, board_no);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				BoardVO board = new BoardVO();
-				board.setNo(rs.getInt(1));
+				board.setBoard_no(rs.getInt(1));
 				board.setUserID(rs.getString(2));
 				board.setTitle(rs.getString(3));
 				board.setContent(rs.getString(4));
