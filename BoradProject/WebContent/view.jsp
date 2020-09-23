@@ -110,8 +110,8 @@
 				<%
 					if(userID != null && userID.equals(boardVO.getUserID())){
 				%>
-					<a href="update.jsp?bbsID=<%=board_no %>" class="btn btn-primary">수정</a>
-					<a href="deleteAction.jsp?bbsID=<%=board_no %>" class="btn btn-primary">삭제</a>
+					<a href="update.jsp?board_no=<%=board_no %>" class="btn btn-primary">수정</a>
+					<a href="deleteAction.jsp?board_no=<%=board_no %>" class="btn btn-primary">삭제</a>
 				<%
 					}
 				%>

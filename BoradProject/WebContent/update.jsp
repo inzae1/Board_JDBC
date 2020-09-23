@@ -97,10 +97,10 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" value=<%=boardVO.getTitle() %>></td>
+								<td><input type="text" class="form-control" placeholder="글 제목" name="title" maxlength="50" value=<%=boardVO.getTitle() %>></td>
 							</tr>
 							<tr>
-								<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"><%=boardVO.getContent() %></textarea></td>
+								<td><textarea class="form-control" placeholder="글 내용" name="content" maxlength="2048" style="height: 350px;"><%=boardVO.getContent() %></textarea></td>
 							</tr>
 						</tbody>
 					</table>
