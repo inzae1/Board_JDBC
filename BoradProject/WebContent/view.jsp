@@ -16,8 +16,6 @@
 			String userID = null;
 			if(session.getAttribute("id") != null){
 				userID = (String)session.getAttribute("id");
-			if(session.getAttribute("userID") != null){
-				userID = (String)session.getAttribute("userID");
 			}
 			
 			int board_no = 0;
