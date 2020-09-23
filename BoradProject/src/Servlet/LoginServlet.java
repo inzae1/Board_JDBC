@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DAO.UserDAO;
+import DAO.UserVO;
 
 /**
  * Servlet implementation class LoginServlet
@@ -22,7 +23,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		response.setContentType("text/html; charset=utf-8");
 		
 		HttpSession session = request.getSession();
 		//로그인
@@ -30,9 +31,12 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("pw");
 
 		UserDAO dao = new UserDAO();
-		response.setContentType("text/html; charset=utf-8");
+		UserVO vo = new UserVO();
+		
 		PrintWriter out = response.getWriter();
-		int user = dao.getUser(id, pw);
+		
+		
+		int user = dao.getUser(id,pw);
 		
 		if (user == -1) {
 			// 아이디가 없을 때 회원 가입으로 가기 response.sendRedirect()
@@ -46,7 +50,8 @@ public class LoginServlet extends HttpServlet {
 			out.flush();
 		} else if (user == 1) {
 			// 로그인 성공 시 자유게시판 페이지로 이동 response.sendRedirect("main.jsp")
-			session.setAttribute(id, pw);
+			session.setAttribute("id", id);
+
 			response.sendRedirect("main.jsp");
 			
 		} 	

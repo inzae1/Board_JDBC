@@ -39,8 +39,8 @@
 <body>    
  <%
 	String userID = null;
-	if(session.getAttribute("userID") != null){
-		userID = (String)session.getAttribute("userID");
+	if(session.getAttribute("id") != null){
+		userID = (String)session.getAttribute("id");
 	}
 	int pageNumber = 1;
 	if(request.getParameter("pageNumber") != null){

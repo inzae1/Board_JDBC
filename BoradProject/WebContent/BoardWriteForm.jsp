@@ -11,8 +11,8 @@
 	<body>
 		<%
 			String userID = null;
-			if(session.getAttribute("userID") != null){
-				userID = (String)session.getAttribute("userID");
+			if(session.getAttribute("id") != null){
+				userID = (String)session.getAttribute("id");
 			}
 		%>
  		<nav class="navbar navbar-default">
@@ -65,7 +65,7 @@
 		
 		<div class="container">
 			<div class="row">
-				<form method="post" action="writeAction.jsp">
+				<form method="post" action="writeServlet">
 					<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 						<thead>
 							<tr>
