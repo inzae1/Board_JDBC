@@ -20,6 +20,7 @@ public class UserUpdate extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		
 		UserVO user = new UserVO();
 		user.setUserID(request.getParameter("id"));

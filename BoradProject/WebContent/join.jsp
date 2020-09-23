@@ -44,16 +44,24 @@
 				<div class="jumbotron" style="padding-top: 20px;">
 					<form method="post" action="joinServlet">
 						<h3 style="text-align:center;">회원가입 화면</h3><br>
-						ID : <div class="form-group">
-							<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="20">
+						<div class="form-group">
+						ID :<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="30">
+							<a href="/checkIdServlet">
+								<input type="button" style="width:60pt;height:25pt;" class="btn btn-primary form-control" value="중복검사">
+							</a>
+						<div id = "checkid"></div>
 						</div>
 						비밀번호 : <div class="form-group">
-							<input type="password" class="form-control" id="userPassword" placeholder="비밀번호" name="userPassword" maxlength="20">
+							<input type="password" class="form-control" id="userPassword" placeholder="숫자 4~12자리" name="userPassword" minlength="4" maxlength="12">
 						</div>
 						비밀번호 확인 : <div class="form-group">
-							<input type="password" class="form-control" id="checkPassword" placeholder="비밀번호 확인" name="checkPassword" maxlength="20">
-							<input type="button" value="확인" onclick="check()">
+						<table>
+							<td><input type="password" class="form-control" id="checkPassword" placeholder="비밀번호 확인" name="checkPassword" maxlengt="20"></td>
+							<td><input type="button" style="width:40pt;height:25pt;" class="btn btn-primary form-control" value="확인" onclick="check()"></td>
 						</div>
+							
+						</table>
+							<div id ="my"></div><br>
 						이름 : <div class="form-group">
 							<input type="text" class="form-control" placeholder="이름" name="name" maxlength="20">
 						</div>
@@ -76,18 +84,23 @@
 			</div>
 		</div>
 		
-		<script >
+		<script type= "text/javascript">
 			const userPassword  = document.getElementById("userPassword");
 			const checkPassword = document.getElementById("checkPassword");
+			
 			const check = () => {
-				if(userPassword.value === checkPassword.value) {
-					alert("일치합니다.");
-					checkPassword.disabled=true;
-				} else {
-					alert("일치하지 않습니다.");
+				if (userPassword.value.length < 4 | userPassword.value.length > 12) {
+					document.getElementById("my").innerHTML="<font color='red'>4~12자리의 숫자를 입력해주세요.</font>";
 					checkPassword.value = "";
-					
-				}
+					userPassword.value = "";
+				}else if(userPassword.value === checkPassword.value) {
+					document.getElementById("my").innerHTML="<font color='blue'>사용가능한 비밀번호입니다.</font>";
+					/* checkPassword.disabled=true; */
+				}else{
+					document.getElementById("my").innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
+					checkPassword.value = "";
+				} 
+				
 			}
 		</script>
 		

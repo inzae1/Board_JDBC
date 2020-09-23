@@ -56,7 +56,7 @@ public class joinServlet extends HttpServlet {
 			if(result == -1){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('존재하는 아이디입니다.')");
+				script.println("document.getElementById(\"checkid\").innerHTML=\"<font color='red'>이미 가입된 아이디입니다.</font>\";");
 				script.println("history.back()");
 				script.println("</script>");
 			} else {
