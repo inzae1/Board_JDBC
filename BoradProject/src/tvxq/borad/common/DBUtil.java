@@ -1,4 +1,4 @@
-package common;
+package tvxq.borad.common;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

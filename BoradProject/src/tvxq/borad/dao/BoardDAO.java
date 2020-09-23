@@ -1,12 +1,12 @@
-package DAO;
+package tvxq.borad.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import DAO.BoardVO;
-import common.DBUtil;
+import tvxq.borad.common.DBUtil;
+import tvxq.borad.vo.BoardVO;
 
 public class BoardDAO {
 	

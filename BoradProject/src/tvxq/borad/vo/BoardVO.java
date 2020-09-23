@@ -1,4 +1,4 @@
-package DAO;
+package tvxq.borad.vo;
 
 public class BoardVO {
 	private int board_no;

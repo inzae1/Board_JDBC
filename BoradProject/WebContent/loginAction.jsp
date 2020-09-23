@@ -1,9 +1,9 @@
 <%@page import="java.io.PrintWriter"%>
-<%@page import="DAO.UserDAO"%>
-<%@page import="DAO.UserVO"%>
+<%@page import="tvxq.borad.dao.UserDAO"%>
+<%@page import="tvxq.borad.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<jsp:useBean id="user" class="DAO.UserVO" scope="page" />
+<jsp:useBean id="user" class="tvxq.borad.vo.UserVO" scope="page" />
 <jsp:setProperty name="user" property="userID" />
 <jsp:setProperty name="user" property="userPassword" /> 
 

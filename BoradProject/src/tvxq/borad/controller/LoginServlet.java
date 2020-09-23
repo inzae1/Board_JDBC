@@ -1,4 +1,4 @@
-package Servlet;
+package tvxq.borad.controller;
 
 
 import java.io.IOException;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DAO.UserDAO;
+import tvxq.borad.dao.UserDAO;
 
 /**
  * Servlet implementation class LoginServlet

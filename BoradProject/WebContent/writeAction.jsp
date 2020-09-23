@@ -1,4 +1,4 @@
-<%@page import="DAO.BoardDAO"%>
+<%@page import="tvxq.borad.dao.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
 
@@ -6,7 +6,7 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 
-<jsp:useBean id="board" class="DAO.BoardVO" scope="page" />
+<jsp:useBean id="board" class="tvxq.borad.dao.BoardVO" scope="page" />
 <jsp:setProperty name="board" property="title" />
 <jsp:setProperty name="board" property="content" />
 

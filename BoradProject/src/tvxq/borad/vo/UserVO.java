@@ -1,4 +1,4 @@
-package DAO;
+package tvxq.borad.vo;
 
 public class UserVO {
 	private String userID;
