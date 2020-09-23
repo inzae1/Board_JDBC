@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="DAO.BoardDAO"%>
-<%@page import="DAO.BoardVO"%>
+<%@page import="tvxq.borad.dao.BoardDAO"%>
+<%@page import="tvxq.borad.vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  
 <!DOCTYPE html>

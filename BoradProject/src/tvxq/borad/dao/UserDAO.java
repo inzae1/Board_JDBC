@@ -1,11 +1,12 @@
-package DAO;
+package tvxq.borad.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import common.DBUtil;
+import tvxq.borad.common.DBUtil;
+import tvxq.borad.vo.UserVO;
 
 public class UserDAO {
 	static final String url = "jdbc:mysql://192.168.70.73:3306/dongjindb?serverTimezone=UTC";

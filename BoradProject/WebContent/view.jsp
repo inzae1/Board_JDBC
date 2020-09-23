@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="DAO.BoardDAO" %>
-<%@ page import="DAO.BoardVO" %>
+<%@ page import="tvxq.borad.dao.BoardDAO" %>
+<%@ page import="tvxq.borad.vo.BoardVO" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,8 +14,14 @@
 	<body>
 		<%
 			String userID = null;
+<<<<<<< HEAD
 			if(session.getAttribute("id") != null){
 				userID = (String)session.getAttribute("id");
+=======
+			
+			if(session.getAttribute("userID") != null){
+				userID = (String)session.getAttribute("userID");
+>>>>>>> ce71a3d9d1e392e4dcff58ed1e730b12a381d924
 			}
 			
 			int board_no = 0;

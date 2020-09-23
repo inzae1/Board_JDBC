@@ -1,4 +1,4 @@
-package Servlet;
+package tvxq.borad.controller;
 
 import java.io.IOException;
 
@@ -9,23 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.UserDAO;
+import tvxq.borad.dao.UserDAO;
 
 /**
- * Servlet implementation class FindId
+ * Servlet implementation class FindPassword
  */
-@WebServlet("/findId")
-public class FindId extends HttpServlet {
+@WebServlet("/findPassword")
+public class FindPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
+		String id = request.getParameter("id");
 		UserDAO userDAO = new UserDAO();
 		
-		String id = userDAO.findUserIdByEmail(email);
+		String password = userDAO.findUserPasswordById(id);
 		
-		request.setAttribute("id", id);
-		RequestDispatcher rd = request.getRequestDispatcher("showId.jsp");
+		request.setAttribute("password", password);
+		RequestDispatcher rd = request.getRequestDispatcher("showPassword.jsp");
 		rd.forward(request, response);
 	}
 
