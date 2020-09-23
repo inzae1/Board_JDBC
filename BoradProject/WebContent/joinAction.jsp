@@ -30,8 +30,8 @@
 			if(userID != null){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alter('이미 로그인 되어 있습니다.')");
-				script.println("history.href='main.jsp'");
+				script.println("alert('이미 로그인 되어 있습니다.')");
+				script.println("location.href='main.jsp'");
 				script.println("</script>");
 			}
 		
@@ -39,7 +39,7 @@
 					|| user.getUserGender() == null || user.getUserEmail() == null){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alter('모두 입력이 되었는지 확인해 주세요.')");
+				script.println("alert('모두 입력이 되었는지 확인해 주세요.')");
 				script.println("history.back()");
 				script.println("</script>");
 			} else {
@@ -48,7 +48,7 @@
 				if(result == -1){
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-					script.println("alter('아이디가 이미 존재합니다.')");
+					script.println("alert('존재하는 아이디입니다.')");
 					script.println("history.back()");
 					script.println("</script>");
 				} else {
