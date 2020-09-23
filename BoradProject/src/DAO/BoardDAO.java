@@ -124,7 +124,7 @@ public class BoardDAO {
 		return false;
 	}
 	
-	public BoardVO getBoardVO(int board_no) {
+	public BoardVO getBoard(int board_no) {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
