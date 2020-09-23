@@ -49,41 +49,41 @@
 						<h3 style="text-align:center;">회원정보 수정 화면</h3><br>
 						<%
 						UserDAO dao = new UserDAO();
-						UserVO user = dao.getUserInfo((String) session.getAttribute("userID"));
+						UserVO user = dao.getUserInfo((String) session.getAttribute("id"));
 						%>
 						ID : <div class="form-group">
-							<input type="text" class="form-control" name="userID" maxlength="20" value="<%=user.getUserID()%>">
+							<input type="text" class="form-control" name="id" maxlength="20" value="<%=user.getUserID()%>">
 						</div>
 						비밀번호 : <div class="form-group">
-							<input type="password" class="form-control" id="userPassword" name="userPassword" maxlength="20" value="<%=user.getUserPassword()%>">
+							<input type="password" class="form-control" id="password" name="userPassword" maxlength="20" value="<%=user.getUserPassword()%>">
 						</div>
 						비밀번호 확인 : <div class="form-group">
 							<input type="password" class="form-control" id="checkPassword"  name="checkPassword" maxlength="20" value="<%=user.getUserPassword()%>">
 							<input type="button" value="확인" onclick="check()">
 						</div>
 						이름 : <div class="form-group">
-							<input type="text" class="form-control" name="userName" maxlength="20" value="<%=user.getUserName()%>">
+							<input type="text" class="form-control" name="name" maxlength="20" value="<%=user.getUserName()%>">
 						</div>
 						이메일 : <div class="form-group">
-							<input type="email" class="form-control" name="userEmail" maxlength="50" value="<%=user.getUserEmail()%>">
+							<input type="email" class="form-control" name="email" maxlength="50" value="<%=user.getUserEmail()%>">
 						</div>
 						<div class="form-group" style="text-align:center;">
 							<%if (user.getUserGender() == "남자") {%>
 							<div class="btn-group" data=toggle="buttons">
 								<label class="btn btn-primary activate">
-									<input type="radio" name="userGender" autocomplete="off" value="남자" checked>남자
+									<input type="radio" name="gender" autocomplete="off" value="남자" checked>남자
 								</label>
 								<label class="btn btn-primary activate">
-									<input type="radio" name="userGender" autocomplete="off" value="여자">여자
+									<input type="radio" name="gender" autocomplete="off" value="여자">여자
 								</label>
 							</div>
 							<%} else {%>
 							<div class="btn-group" data=toggle="buttons">
 								<label class="btn btn-primary activate">
-									<input type="radio" name="userGender" autocomplete="off" value="남자">남자
+									<input type="radio" name="gender" autocomplete="off" value="남자">남자
 								</label>
 								<label class="btn btn-primary activate">
-									<input type="radio" name="userGender" autocomplete="off" value="여자" checked>여자
+									<input type="radio" name="gender" autocomplete="off" value="여자" checked>여자
 								</label>
 							</div>
 							<%} %>

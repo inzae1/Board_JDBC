@@ -22,11 +22,11 @@ public class UserUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		UserVO user = new UserVO();
-		user.setUserID(request.getParameter("userID"));
-		user.setUserPassword(request.getParameter("userPassword"));
-		user.setUserName(request.getParameter("userName"));
-		user.setUserEmail(request.getParameter("userEmail"));
-		user.setUserGender(request.getParameter("userGender"));
+		user.setUserID(request.getParameter("id"));
+		user.setUserPassword(request.getParameter("password"));
+		user.setUserName(request.getParameter("name"));
+		user.setUserEmail(request.getParameter("email"));
+		user.setUserGender(request.getParameter("gender"));
 		
 		UserDAO dao = new UserDAO();
 		dao.updateUser(user);

@@ -86,6 +86,7 @@
 							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">회원관리<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="logoutAction.jsp">로그아웃</a></li>
+							<li><a href="updateUserForm.jsp">정보수정</a></li>
 						</ul>
 					</li>
 				</ul>
