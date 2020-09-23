@@ -43,20 +43,21 @@
 			<div class="col-lg-4">
 				<div class="jumbotron" style="padding-top: 20px;">
 					<form method="post" action="joinAction.jsp">
-						<h3 style="text-align:center;">회원가입 화면</h3>
-						<div class="form-group">
+						<h3 style="text-align:center;">회원가입 화면</h3><br>
+						ID : <div class="form-group">
 							<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
 						</div>
-						<div class="form-group">
+						비밀번호 : <div class="form-group">
 							<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
 						</div>
-						<div class="form-group">
+						비밀번호 확인 : <div class="form-group">
 							<input type="password" class="form-control" placeholder="비밀번호 확인" name="userPassword" maxlength="20">
+							<input type="button" value="확인" onclick="alert('일치합니다.')">
 						</div>
-						<div class="form-group">
+						이름 : <div class="form-group">
 							<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
 						</div>
-						<div class="form-group">
+						이메일 : <div class="form-group">
 							<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="50">
 						</div>
 						<div class="form-group" style="text-align:center;">
