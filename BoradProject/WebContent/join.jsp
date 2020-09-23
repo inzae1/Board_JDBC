@@ -51,6 +51,9 @@
 							<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
 						</div>
 						<div class="form-group">
+							<input type="password" class="form-control" placeholder="비밀번호 확인" name="userPassword" maxlength="20">
+						</div>
+						<div class="form-group">
 							<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
 						</div>
 						<div class="form-group">

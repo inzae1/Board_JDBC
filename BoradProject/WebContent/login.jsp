@@ -25,7 +25,7 @@
 		<input style="text" name="id" size=20 label=loginId placeholder="ID"><br>
 			
 		<label for="loginPw" style="font-size:15px">비밀번호</label>
-		<input style="password" name="pw" size=20 label=loginPw placeholder="Password"><br><br>
+		<input type="password" name="pw" maxlength='20' size=20 label=loginPw placeholder="Password"><br><br>
 		<input type="submit" value="로그인" style="height:40x; width:240px;"><br>
 		&nbsp;&nbsp;
 		<a href=findId.jsp style="font-size:10px; color:gray" >아이디 찾기</a> 
