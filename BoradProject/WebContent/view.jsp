@@ -29,7 +29,7 @@
 				script.println("location.href='main.jsp'");
 				script.println("</script>");
 			}
-			BoardVO boardVO = new BoardDAO().getBbs(board_no);
+			BoardVO boardVO = new BoardDAO().getBoardVO(board_no);
 		%>
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
