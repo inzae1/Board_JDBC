@@ -81,7 +81,7 @@
 			const checkPassowrd = document.getElementById("checkPassword");
 			const check = () => {
 				if(userPassword.value === checkPassword.value) {
-					alert("일치합니다.");
+					document.write("<p>일치합니다</p>]")
 				} else {
 					alert("일치하지 않습니다.");
 					

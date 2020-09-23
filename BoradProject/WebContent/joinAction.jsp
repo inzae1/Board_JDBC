@@ -40,13 +40,7 @@
 			} */
 			
 			
-			if(userPassword != checkPassword) {
-				PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("alert('비밀번호가 틀렸습니다.')");
-				script.println("history.back()='main.jsp'");
-				script.println("</script>");
-			}
+			
 			
 		
 			if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null
@@ -56,17 +50,22 @@
 				script.println("alert('모두 입력이 되었는지 확인해 주세요.')");
 				script.println("history.back()");
 				script.println("</script>");
+			}
+				
+			else if(userPassword != checkPassword) {
+					PrintWriter script = response.getWriter();
+					script.println("<script>");
+					script.println("alert('비밀번호가 틀렸습니다.')");
+					script.println("history.back()");
+					script.println("</script>");
+			
 			} else {
 				UserDAO userDAO = new UserDAO();
 				int result = userDAO.addUser(user);
 				if(result == -1){
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-<<<<<<< HEAD
 					script.println("alert('존재하는 아이디입니다.')");
-=======
-					script.println("alert('아이디가 이미 존재합니다.')");
->>>>>>> a5947131d40ba808bcfea263544f8c0247da78a7
 					script.println("history.back()");
 					script.println("</script>");
 				} else {
