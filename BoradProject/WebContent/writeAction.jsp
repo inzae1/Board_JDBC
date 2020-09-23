@@ -29,6 +29,7 @@
 				script.println("alter('로그인을 하세요.')");
 				script.println("location.href='login.jsp'");
 				script.println("</script>");
+				script.flush();
 			} else{
 				if(board.getTitle() == null || board.getTitle() == null){
 					PrintWriter script = response.getWriter();
