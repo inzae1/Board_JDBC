@@ -151,30 +151,35 @@ public class BoardDAO {
 		return null;
 	}
 	
-	public boolean updateBoard(BoardVO board) {
+	public int update(int board_no, String title, String content) {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		boolean resultFlag = false;
-		String sql = "update board set title=?, content=?, views=?, likes=? where board_no=?";
-		
-		
+		String sql = "update board set title = ?, content =? where board_no = ?";
 		try {
+			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, board.getTitle());
-			ps.setString(2, board.getContent());
-			ps.setInt(3, board.getViews());
-			ps.setInt(4, board.getLikes());
-			ps.setInt(5, board.getBoard_no());
-			
-			int count = ps.executeUpdate();
-			if (count == 1) {
-				resultFlag = true;
-			}
-		} catch (Exception e) {
+			ps.setString(1, title);
+			ps.setString(2, content);
+			ps.setInt(3, board_no);
+			return ps.executeUpdate();
+		}catch(Exception e) {
 			e.printStackTrace();
-		} finally {
-			DBUtil.close(conn, ps);
 		}
-		return resultFlag;
+		return -1;
+	}
+	
+	public int delete(int board_no) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String sql = "update board set bbsAvailable = 0 where board_no = ?";
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, board_no);
+			return ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 }
