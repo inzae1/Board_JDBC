@@ -30,6 +30,8 @@
 				script.println("</script>");
 			}
 			BoardVO boardVO = new BoardDAO().getBoard(board_no);
+			BoardDAO boardDAO = new BoardDAO();
+			boardDAO.updateCount(boardVO);
 		%>
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
