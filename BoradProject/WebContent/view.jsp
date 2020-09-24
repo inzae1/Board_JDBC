@@ -106,10 +106,14 @@
 							<td>내용</td>
 							<td colspan="2" style="min-height: 200px; text-align: left;"><%=boardVO.getContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
 						</tr>
+						<tr>
+							<td>추천수</td>
+							<td><%=boardVO.getLikes() %></td>
+						</tr>
 					</tbody>
 				</table>
 				<a href="boardForm.jsp" class="btn btn-primary">목록</a>
-              	<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>">추천</a>
+              	<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>" class="btn btn-danger">추천</a>
 				<%
 					if(userID != null && userID.equals(boardVO.getUserID())){
 				%>
