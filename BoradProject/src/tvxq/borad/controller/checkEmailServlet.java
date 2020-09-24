@@ -40,6 +40,9 @@ public class checkEmailServlet extends HttpServlet {
 				out.println("history.back();");
 				out.println("<script>");
 				break;
+			}else if(user.getUserEmail() == null) {
+				PrintWriter out = response.getWriter();
+				out.println("아나나나");
 			}else {
 				PrintWriter out = response.getWriter();
 				out.println("<script>");

@@ -118,7 +118,7 @@
 	                <td>작성일</td>
 	                <td>조회수</td>
 	                <td>추천수</td>
-	            </tr>    
+	            </tr>    x
 	        </thead>
 	        <tbody>
 	            <%
@@ -129,12 +129,13 @@
 					<tr>
 						<td><%=list.get(i).getBoard_no() %></td>
 						<td><%=list.get(i).getUserID() %></td>
-						<td><a href="view.jsp?board_no=<%=list.get(i).getBoard_no()%>"><%=list.get(i).getTitle() %></a></td>
+						<td><a href="boardDetail?boardNo=<%=list.get(i).getBoard_no()%>"><%=list.get(i).getTitle() %></a></td>
 						<td><%=list.get(i).getReg_date() %></td>
 						<td><%=list.get(i).getViews() %></td>
 						<td><%=list.get(i).getLikes() %></td>
 					</tr>
 				<%
+				
 					}
 				%>
 	        </tbody>
