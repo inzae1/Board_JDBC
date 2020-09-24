@@ -7,6 +7,21 @@
 		<meta name="viewport" content="width=device-width", initial-scale="1">
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<title>main</title>
+		<style>
+			#aa {
+			  background: linear-gradient(#05FBFF, #1D62F0 ) fixed;
+			}
+			/* div {
+			  margin: 120px 0;
+			  text-align: center;
+			} */
+			h1, p {
+			  font-family: Meiryo, "Hiragino Kaku Gothic Pro W3", Courier New, sans-serif;
+			  line-height: 1.5;
+			  margin-bottom: 25px;
+			  color: #fff;
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -16,7 +31,7 @@
 				userID = (String)session.getAttribute("id");
 			}
 		%>
-		<nav class="navbar navbar-default">
+		 <nav class="navbar navbar-default">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -25,7 +40,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>		
 				</button>
-				<a class="navbar-brand" href="main.jsp">JSP 게시판</a>
+				<a href="main.jsp" class="logo">
+					<img src="images/7.png" alt="">
+				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
@@ -66,11 +83,10 @@
 		</nav>
 		
 		<div class="container">
-			<div class="jumbotron">
-				<div class="container">
-					<h1>웹 사이트 소개</h1>
-					<p>JSP 웹 사이트 입니다. 간단한 게시판입니다.</p>
-				</div>
+			<div class="jumbotron" id="aa">
+				<h1>웹 사이트 소개</h1>
+				<p>JSP 웹 사이트 입니다. 간단한 게시판입니다.</p>
+				<a href="boardForm.jsp" class="btn btn-primary">게시판으로 이동~</a>
 			</div>
 		</div>
 		
