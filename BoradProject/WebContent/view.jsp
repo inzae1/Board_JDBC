@@ -106,6 +106,27 @@
 						</tr>
 					</tbody>
 				</table>
+				
+				<div class="container">
+					<div class="row">
+						<form action="writeServlet" method="post">
+							<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+								<thead>
+									<tr>
+										<th colspan="2" style="background-color: #eeeeee; text-align: center;">댓글</th>
+									</tr>		
+								</thead>
+								<tbody>
+									<tr>
+										<td><textarea type="text" class="form-control" placeholder="댓글 내용" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
+									</tr>
+								</tbody>
+							</table>
+							<input type="submit" class="btn btn-primary pull-right" value="댓글 입력">
+						</form>
+					</div>
+				</div>
+				
 				<a href="boardForm.jsp" class="btn btn-primary">목록</a>
 				<%
 					if(userID != null && userID.equals(boardVO.getUserID())){
