@@ -25,7 +25,7 @@ public class writeServlet extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
-		
+		request.setCharacterEncoding("UTF-8");
 		BoardVO board = new BoardVO();
 		BoardDAO boardDAO = new BoardDAO();
 		String userID = null;
