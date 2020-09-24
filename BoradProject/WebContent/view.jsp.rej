@@ -1,0 +1,10 @@
+diff a/BoradProject/WebContent/view.jsp b/BoradProject/WebContent/view.jsp	(rejected hunks)
+@@ -30,6 +30,8 @@
+ 				script.println("location.href='boardForm.jsp'");
+ 				script.println("</script>");
+ 			}
++			
++			List<RepleVO> repleList = (List<RepleVO>) request.getAttribute("repleList");
+ 		%>
+ 		<nav class="navbar navbar-default">
+ 			<div class="navbar-header">
