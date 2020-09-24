@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tvxq.borad.dao.BoardDAO;
 import tvxq.borad.dao.RepleDAO;
@@ -28,6 +29,13 @@ public class BoardDetail extends HttpServlet {
 		
 		BoardDAO boardDAO = new BoardDAO();
 		BoardVO boardVO = boardDAO.getBoard(boardNo);
+		
+		/*
+		 * HttpSession session = request.getSession();
+		 * 
+		 * String userID = null; if(session.getAttribute("id") != null){ userID =
+		 * (String)session.getAttribute("id"); }
+		 */
 		
 		request.setAttribute("boardVO", boardVO);
 		
@@ -48,6 +56,7 @@ public class BoardDetail extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		doGet(request,response);
 	}
+	
 }

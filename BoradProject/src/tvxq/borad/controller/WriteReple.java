@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tvxq.borad.dao.RepleDAO;
 import tvxq.borad.vo.RepleVO;
@@ -23,6 +24,12 @@ public class WriteReple extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		
+		HttpSession session = request.getSession();
+		
+		/*
+		 * String userID = null; if(session.getAttribute("id") != null){ userID =
+		 * (String)session.getAttribute("id"); }
+		 */
 		int boardNo = Integer.parseInt(request.getParameter("boardNo"));
 		String userId = request.getParameter("userId");
 		String content = request.getParameter("reple");
@@ -41,6 +48,8 @@ public class WriteReple extends HttpServlet {
 		
 //		// get
 //		response.sendRedirect("boardDetail");
+		
+		
 		
 	}
 

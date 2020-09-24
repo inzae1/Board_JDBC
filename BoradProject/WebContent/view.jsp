@@ -21,8 +21,16 @@
 				userID = (String)session.getAttribute("id");
 			}
 			
+			
+			/* int board_no = 0;
+			if(request.getParameter("board_no") != null){
+				board_no = Integer.parseInt(request.getParameter("board_no"));
+			}
+			 */
 			BoardVO boardVO = (BoardVO) request.getAttribute("boardVO"); 
+			
 			int board_no = boardVO.getBoard_no();
+			
 			if(board_no == 0){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
@@ -31,7 +39,6 @@
 				script.println("</script>");
 			}
 			
-
 			List<RepleVO> repleList = (List<RepleVO>) request.getAttribute("repleList");
 			
 			
