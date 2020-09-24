@@ -3,6 +3,8 @@ package tvxq.borad.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import tvxq.borad.common.DBUtil;
 import tvxq.borad.vo.RepleVO;
@@ -13,15 +15,14 @@ public class RepleDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		boolean resultFlag = false;
-		String sql = "insert into reple (no, board_no, userrID, content) values(?,?,?,?)";
+		String sql = "insert into reple (board_no, userID, content) values(?,?,?)";
 
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, reple.getNo());
-			ps.setInt(2, reple.getBoardNo());
-			ps.setString(3, reple.getUserId());
-			ps.setString(4, reple.getContent());
+			ps.setInt(1, reple.getBoardNo());
+			ps.setString(2, reple.getUserId());
+			ps.setString(3, reple.getContent());
 
 			int count = ps.executeUpdate();
 			if (count == 1) {
@@ -61,6 +62,34 @@ public class RepleDAO {
 			DBUtil.close(conn, ps, rs);
 		}
 		return reple;
+	}
+	
+	public List<RepleVO> getRepleList() {
+		List<RepleVO> repleList = new ArrayList<RepleVO>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "select no, board_no, userID, content from reple";
+
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				RepleVO repleVO = new RepleVO();
+				repleVO.setNo(rs.getInt(1));
+				repleVO.setBoardNo(rs.getInt(2));
+				repleVO.setUserId(rs.getString(3));
+				repleVO.setContent(rs.getString(4));
+				repleList.add(repleVO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtil.close(conn, ps, rs);
+		}
+		return repleList;
 	}
 	
 	public boolean updateReple(RepleVO reple) {

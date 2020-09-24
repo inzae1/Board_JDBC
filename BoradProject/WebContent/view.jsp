@@ -1,7 +1,10 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="tvxq.borad.dao.BoardDAO" %>
 <%@ page import="tvxq.borad.vo.BoardVO" %>
+<%@ page import="tvxq.borad.vo.RepleVO" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,10 +21,8 @@
 				userID = (String)session.getAttribute("id");
 			}
 			
-			int board_no = 0;
-			if(request.getParameter("board_no") != null){
-				board_no = Integer.parseInt(request.getParameter("board_no"));
-			}
+			BoardVO boardVO = (BoardVO) request.getAttribute("boardVO"); 
+			int board_no = boardVO.getBoard_no();
 			if(board_no == 0){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
@@ -29,7 +30,8 @@
 				script.println("location.href='boardForm.jsp'");
 				script.println("</script>");
 			}
-			BoardVO boardVO = new BoardDAO().getBoard(board_no);
+			
+			List<RepleVO> repleList = (List<RepleVO>) request.getAttribute("repleList");
 		%>
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
@@ -109,15 +111,40 @@
 				
 				<div class="container">
 					<div class="row">
-						<form action="writeServlet" method="post">
+					<%
+					if(repleList != null) {
+					%>
+						<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+							<thead style="background-color: #eeeeee;">
+								<tr>
+									<th colspan="2" style="background-color: #eeeeee; text-align: center;">댓글</th>
+								</tr>
+								<tr>
+									<th style="width: 20%; text-align: center;">작성자</td>
+									<th colspan="2" style="text-align: center;">댓글 내용</td>		
+								</tr>
+							</thead>
+							<tbody>
+								
+					<%
+						for(RepleVO repleVO : repleList) {
+					%>
+								<tr>
+									<td style="width: 20%;"><%=repleVO.getUserId() %></td>
+									<td colspan="2"><%=repleVO.getContent() %></td>
+								</tr>
+					<%		
+						}
+					}
+					%>
+							</tbody>
+						</table>
+						<form action="writeReple" method="post">
 							<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-								<thead>
-									<tr>
-										<th colspan="2" style="background-color: #eeeeee; text-align: center;">댓글</th>
-									</tr>		
-								</thead>
 								<tbody>
 									<tr>
+										<input hidden name="boardNo" value=<%=boardVO.getBoard_no() %>>
+										<input hidden name="userId" value=<%=userID %>>
 										<td><textarea type="text" class="form-control" placeholder="댓글 내용" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
 									</tr>
 								</tbody>
@@ -126,6 +153,7 @@
 						</form>
 					</div>
 				</div>
+				
 				
 				<a href="boardForm.jsp" class="btn btn-primary">목록</a>
 				<%
