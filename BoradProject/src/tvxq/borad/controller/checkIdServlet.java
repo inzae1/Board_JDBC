@@ -3,6 +3,7 @@ package tvxq.borad.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,18 +23,26 @@ public class checkIdServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		System.out.println(1111);
+		
 		UserVO vo = new UserVO();
 		UserDAO dao = new UserDAO();
+		PrintWriter script = response.getWriter();
 		
 		vo.setUserID(request.getParameter("id"));
 		int result = dao.addUser(vo);
 		if(result == -1){
-			PrintWriter script = response.getWriter();
+			
 			script.println("<script>");
 			script.println("document.getElementById(\"checkid\").innerHTML=\"<font color='red'>이미 가입된 아이디입니다.</font>\";");
 			script.println("history.back()");
 			script.println("</script>");
+			script.flush();
+		}else {
+			script.println("<script>");
+			script.println("document.getElementById(\"checkid\").innerHTML=\"<font color='red'>이미 가입된 아이디입니다.</font>\";");
+			script.println("history.back()");
+			script.println("</script>");
+			script.flush();
 		}
 		
 	}

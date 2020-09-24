@@ -14,39 +14,41 @@ import javax.servlet.http.HttpSession;
 import tvxq.borad.dao.UserDAO;
 import tvxq.borad.vo.UserVO;
 
-@WebServlet("/login")
+@WebServlet("/login1")
 public class LoginServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
 		
 		HttpSession session = request.getSession();
-		//로그인
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-
 		UserDAO dao = new UserDAO();
 		UserVO vo = new UserVO();
+		//로그인
+		vo.setUserID(request.getParameter("id"));
+		vo.setUserPassword(request.getParameter("pw")); 
 		
 		PrintWriter out = response.getWriter();
 		
 		
-		int user = dao.getUser(id,pw);
+		int user = dao.getUser(vo.getUserID(),vo.getUserPassword());
 		
 		if (user == -1) {
 			// 아이디가 없을 때 회원 가입으로 가기 response.sendRedirect()
-			out.println("<script>alert('가입되지 않은 아이디입니다.'); history.back();");
+			out.println("<script>alert('가입되지 않은 아이디입니다');");
+			out.println("history.back()");
 			out.println("</script>");
 			out.flush();
 		} else if (user == 0) {
 			// 비밀번호 불일치 할 때 비밀번호 찾기로 가기 response.sendRedirect() 
-			out.println("<script>alert('비밀번호 잘못 입력하셨습니다.'); history.back();");
+			out.println("<script>alert('비밀번호가 틀렸습니다.');");
+			out.println("history.back()");
 			out.println("</script>");
 			out.flush();
 		} else if (user == 1) {
 			// 로그인 성공 시 자유게시판 페이지로 이동 response.sendRedirect("main.jsp")
-			session.setAttribute("id", id);
+			session.setAttribute("id", vo.getUserID());
 
 			response.sendRedirect("main.jsp");
 			

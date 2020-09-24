@@ -55,12 +55,14 @@
 							<input type="text" class="form-control" name="id" maxlength="20" value="<%=user.getUserID()%>" readonly>
 						</div>
 						비밀번호 : <div class="form-group">
-							<input type="password" class="form-control" id="password" name="userPassword" maxlength="20" value="<%=user.getUserPassword()%>">
+							<input type="password" class="form-control" id="pw" name="pw" maxlength="20" value="<%=user.getUserPassword()%>">
 						</div>
 						비밀번호 확인 : <div class="form-group">
 							<input type="password" class="form-control" id="checkPassword"  name="checkPassword" maxlength="20" value="<%=user.getUserPassword()%>">
-							<input type="button" value="확인" onclick="check()">
+							<td><input type="button" style="width:40pt;height:25pt;" class="btn btn-primary form-control" value="확인" onclick="check()"></td>
 						</div>
+							
+							<div id ="my"></div><br>
 						이름 : <div class="form-group">
 							<input type="text" class="form-control" name="name" maxlength="20" value="<%=user.getUserName()%>">
 						</div>
@@ -94,19 +96,24 @@
 			</div>
 		</div>
 		
-		<script >
+		<script type= "text/javascript">
 			const userPassword  = document.getElementById("userPassword");
 			const checkPassword = document.getElementById("checkPassword");
+			
 			const check = () => {
-				if(userPassword.value === checkPassword.value) {
-					alert("일치합니다.");
-					checkPassword.disabled=true;
-				} else {
-					alert("일치하지 않습니다.");
+				if (userPassword.value.length < 4 | userPassword.value.length > 12) {
+					document.getElementById("my").innerHTML="<font color='red'>4~12자리의 숫자를 입력해주세요.</font>";
 					checkPassword.value = "";
-					
+					userPassword.value = "";
+				}else if(userPassword.value === checkPassword.value) {
+					document.getElementById("my").innerHTML="<font color='blue'>비밀번호가 일치합니다.</font>";
+					/* checkPassword.disabled=true; */
+				}else{
+					document.getElementById("my").innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
+					checkPassword.value = "";
 				}
 			}
+				
 		</script>
 		
 		<!-- <script src="https://code.jquery.com/jquery-1.11.3.js" integrity="sha256-IGWuzKD7mwVnNY01LtXxq3L84Tm/RJtNCYBfXZw3Je0=" crossorigin="anonymous"></script> -->

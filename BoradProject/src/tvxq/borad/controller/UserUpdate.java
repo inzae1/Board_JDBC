@@ -26,7 +26,7 @@ public class UserUpdate extends HttpServlet {
 		
 		UserVO user = new UserVO();
 		user.setUserID(request.getParameter("id"));
-		user.setUserPassword(request.getParameter("userPassword"));
+		user.setUserPassword(request.getParameter("pw"));
 		user.setUserName(request.getParameter("name"));
 		user.setUserEmail(request.getParameter("email"));
 		user.setUserGender(request.getParameter("gender"));
