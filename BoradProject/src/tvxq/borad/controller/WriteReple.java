@@ -27,7 +27,7 @@ public class WriteReple extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		/*
-		 * String userID = null; if(session.getAttribute("id") != null){ userID =
+		 * String userID = null; if(session.getAttribute("id") != null){ userID =21232132132
 		 * (String)session.getAttribute("id"); }
 		 */
 		int boardNo = Integer.parseInt(request.getParameter("boardNo"));
