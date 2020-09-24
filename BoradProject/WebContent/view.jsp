@@ -33,7 +33,38 @@
 			
 
 			List<RepleVO> repleList = (List<RepleVO>) request.getAttribute("repleList");
+			BoardVO boardVO = new BoardDAO().getBoard(board_no);
+			
 		%>
+		
+		<%
+		// 저장된 쿠키 불러오기
+		Cookie[] cookieFromRequest = request.getCookies();
+		String cookieValue = null;
+		for(int i = 0 ; i<cookieFromRequest.length; i++) {
+		// 요청정보로부터 쿠키를 가져온다.
+			cookieValue = cookieFromRequest[0].getValue();	
+		}
+	
+ 		/* board_no = Integer.parseInt(request.getParameter("board_no")); */
+
+		if (session.getAttribute(board_no+":cookie") == null) {
+		 	session.setAttribute(board_no+":cookie", board_no + ":" + cookieValue);
+		} else {
+			session.setAttribute(board_no+":cookie ex", session.getAttribute(board_no+":cookie"));
+			if (!session.getAttribute(board_no+":cookie").equals(board_no + ":" + cookieValue)) {
+			 	session.setAttribute(board_no+":cookie", board_no + ":" + cookieValue);
+			}
+		}
+ 		BoardDAO boardDAO = new BoardDAO();
+ 		BoardVO  board = boardDAO.getBoard(board_no);
+
+ 		// 조회수 카운트
+ 		if (!session.getAttribute(board_no+":cookie").equals(session.getAttribute(board_no+":cookie ex"))) {
+ 			boardDAO.updateCount(board);
+ 	}
+ 	
+ %> 
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"

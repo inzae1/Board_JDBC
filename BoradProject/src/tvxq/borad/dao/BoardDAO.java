@@ -51,7 +51,7 @@ public class BoardDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "insert into board (board_no, userID, title, content, views) values (?,?,?,?,?)";
+		String sql = "insert into board (board_no, userID, title, content) values (?,?,?,?)";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -59,16 +59,11 @@ public class BoardDAO {
 			ps.setString(2, userID);
 			ps.setString(3, title);
 			ps.setString(4, content);
-			ps.setInt(5, getViews());
 			return ps.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		return -1; // 데이터베이스 오류
-	}
-	
-	public int getViews() {
-		return 1;
 	}
 	
 	public int getLikes(int board_no) {
