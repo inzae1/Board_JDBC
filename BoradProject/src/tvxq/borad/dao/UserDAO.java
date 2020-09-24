@@ -156,18 +156,18 @@ public class UserDAO {
 		return password;
 	}
 	
-	public List<UserVO> getUserList(){
+	public List<UserVO> getEmailList(){
 		List<UserVO> userList = new ArrayList<UserVO>();
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
 			conn = DBUtil.getConnection();
-			ps = conn.prepareStatement("select id from user");
+			ps = conn.prepareStatement("select email from user");
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				UserVO vo = new UserVO();
-				vo.setUserID(rs.getString(1));
+				vo.setUserEmail(rs.getString(1));
 				
 				userList.add(vo);
 				

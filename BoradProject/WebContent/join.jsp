@@ -43,15 +43,16 @@
 			<div class="col-lg-4">
 				<div class="jumbotron" style="padding-top: 20px;">
 					<form method="post" action="joinServlet">
-						<h3 style="text-align:center;">회원가입 화면</h3><br>
-						ID :<div class="form-group"></div>
+						<h3 style="text-align:center;"><b>회원가입</b></h3><br>
+						ID :<div class="form-group">
 						<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="30">
-						<a href="icCheckForm.jsp"></a>
-						<input type="button" style="width:60pt;height:25pt;" class="btn btn-primary form-control" value="중복검사">
+						<a href="checkIdServlet"></a>
+						</div>
+						<!-- <input type="button" style="width:60pt;height:25pt;" class="btn btn-primary form-control" value="중복검사">
 
 						<div id = "checkid"></div>
-						비밀번호 : <div class="form-group">
-							<input type="password" class="form-control" id="userPassword" placeholder="숫자 4~12자리" name="userPassword" minlength="4" maxlength="12">
+-->						비밀번호 : <div class="form-group">
+						<input type="password" class="form-control" id="userPassword" placeholder="숫자 4~12자리" name="userPassword" minlength="4" maxlength="12">
 						</div>
 						비밀번호 확인 : <div class="form-group">
 						<table>

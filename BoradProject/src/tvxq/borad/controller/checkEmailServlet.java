@@ -2,6 +2,7 @@ package tvxq.borad.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,8 +17,8 @@ import tvxq.borad.vo.UserVO;
 /**
  * Servlet implementation class checkIdServlet
  */
-@WebServlet("/checkIdServlet")
-public class checkIdServlet extends HttpServlet {
+@WebServlet("/checkEmailServlet")
+public class checkEmailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	
@@ -26,23 +27,26 @@ public class checkIdServlet extends HttpServlet {
 		
 		UserVO vo = new UserVO();
 		UserDAO dao = new UserDAO();
-		PrintWriter script = response.getWriter();
 		
-		vo.setUserID(request.getParameter("id"));
-		int result = dao.addUser(vo);
-		if(result == -1){
-			
-			script.println("<script>");
-			script.println("document.getElementById(\"checkid\").innerHTML=\"<font color='red'>이미 가입된 아이디입니다.</font>\";");
-			script.println("history.back()");
-			script.println("</script>");
-			script.flush();
-		}else {
-			script.println("<script>");
-			script.println("document.getElementById(\"checkid\").innerHTML=\"<font color='red'>이미 가입된 아이디입니다.</font>\";");
-			script.println("history.back()");
-			script.println("</script>");
-			script.flush();
+		
+		vo.setUserEmail(request.getParameter("email"));
+		List<UserVO> userList = dao.getEmailList();
+		
+		for (UserVO user : userList) {
+			if(user.getUserEmail() == vo.getUserEmail()) {
+				PrintWriter out = response.getWriter();
+				out.println("<script>");
+				out.println("alert('가입된 이메일이 있습니다.);");
+				out.println("history.back();");
+				out.println("<script>");
+				break;
+			}else {
+				PrintWriter out = response.getWriter();
+				out.println("<script>");
+				out.println("alert('사용가능한 이메일입니다.');");
+				out.println("location.href='join.jsp';");
+				out.println("<script>");
+			}
 		}
 		
 	}
