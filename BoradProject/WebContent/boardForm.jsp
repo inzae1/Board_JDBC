@@ -105,15 +105,6 @@
         <table class="table table-striped" width="800" border="3" bordercolor="lightgray">
             <thead>
 	            <tr heigh="30">
-<<<<<<< HEAD
-	                <td>글번호</td>
-	                <td>작성자</td>
-	                <td>제목</td>
-	                <td>작성일</td>
-	                <td>조회수</td>
-	                <td>추천수</td>
-	            </tr>    x
-=======
 	                <td style="background-color: #337ab7; color: #fff;">글번호</td>
 	                <td style="background-color: #337ab7; color: #fff;">작성자</td>
 	                <td style="background-color: #337ab7; color: #fff;">제목</td>
@@ -121,7 +112,6 @@
 	                <td style="background-color: #337ab7; color: #fff;">조회수</td>
 	                <td style="background-color: #337ab7; color: #fff;">추천수</td>
 	            </tr>    
->>>>>>> 2c5d764cecdbf5b48294604d8ef3adaf23f608dc
 	        </thead>
 	        <tbody>
 	            <%
