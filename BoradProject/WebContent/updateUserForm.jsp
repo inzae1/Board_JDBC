@@ -55,14 +55,15 @@
 							<input type="text" class="form-control" name="id" maxlength="20" value="<%=user.getUserID()%>" readonly>
 						</div>
 						비밀번호 : <div class="form-group">
-							<input type="password" class="form-control" id="pw" name="pw" maxlength="20" value="<%=user.getUserPassword()%>">
+							<input type="password" class="form-control" id="userPassword" name="userPassword" maxlength="20" value="<%=user.getUserPassword()%>">
 						</div>
 						비밀번호 확인 : <div class="form-group">
 							<input type="password" class="form-control" id="checkPassword"  name="checkPassword" maxlength="20" value="<%=user.getUserPassword()%>">
-							<td><input type="button" style="width:40pt;height:25pt;" class="btn btn-primary form-control" value="확인" onclick="check()"></td>
+							<div id ="my"></div><br>
+							<input type="button" style="width:40pt;height:25pt;" class="btn btn-primary form-control" value="확인" onclick="check()">
 						</div>
 							
-							<div id ="my"></div><br>
+							
 						이름 : <div class="form-group">
 							<input type="text" class="form-control" name="name" maxlength="20" value="<%=user.getUserName()%>">
 						</div>
@@ -90,8 +91,11 @@
 							</div>
 							<%} %>
 						</div>
-						<input type="submit" class="btn btn-primary form-control" value="수정">
-						<input type="button" class="btn btn-primary form-control" value="취소" onclick="history.back();">
+						<table>
+						<td><input type="submit" style="width:70pt;height:25pt;" class="btn btn-primary form-control" value="수정"></td>
+						<td><div class="col-lg-4"></td>
+						<td><input align="right" style="width:70pt;height:25pt;" type="button" class="btn btn-primary form-control" value="취소" onclick="history.back();"><td>
+ 						</table>
  					</form>
 				</div>
 			</div>

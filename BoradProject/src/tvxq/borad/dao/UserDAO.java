@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import tvxq.borad.common.DBUtil;
 import tvxq.borad.vo.UserVO;
@@ -45,7 +47,6 @@ public class UserDAO {
 		
 		return user;
 	}
-	
 	
 	// 회원정보 수정
 	public int updateUser(UserVO user) {
@@ -155,10 +156,29 @@ public class UserDAO {
 		return password;
 	}
 	
-	
-	
-	
-	
+	public List<UserVO> getUserList(){
+		List<UserVO> userList = new ArrayList<UserVO>();
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement("select id from user");
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				UserVO vo = new UserVO();
+				vo.setUserID(rs.getString(1));
+				
+				userList.add(vo);
+				
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBUtil.close(conn, ps, rs);
+		}
+		return userList;
+	}
 	
 	// 로그인을 시도하는 함수
 		public int getUser(String userID, String userPassword) {
