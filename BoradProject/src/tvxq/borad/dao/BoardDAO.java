@@ -51,7 +51,7 @@ public class BoardDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "insert into board (board_no, userID, title, content, views, likes) values (?,?,?,?,?,?)";
+		String sql = "insert into board (board_no, userID, title, content, views) values (?,?,?,?,?)";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -60,7 +60,6 @@ public class BoardDAO {
 			ps.setString(3, title);
 			ps.setString(4, content);
 			ps.setInt(5, getViews());
-			ps.setInt(6, getLikes());
 			return ps.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -72,8 +71,19 @@ public class BoardDAO {
 		return 1;
 	}
 	
-	public int getLikes() {
-		return 1;
+	public int getLikes(int board_no) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String sql = "update board set likes = likes + 1 where board_no = ?";
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, board_no);
+			return ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 	
 	public ArrayList<BoardVO> getList(int pageNumber){

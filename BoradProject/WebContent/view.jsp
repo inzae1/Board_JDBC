@@ -107,6 +107,7 @@
 					</tbody>
 				</table>
 				<a href="boardForm.jsp" class="btn btn-primary">목록</a>
+              	<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>">추천</a>
 				<%
 					if(userID != null && userID.equals(boardVO.getUserID())){
 				%>
