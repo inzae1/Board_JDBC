@@ -30,14 +30,9 @@
 				script.println("location.href='boardForm.jsp'");
 				script.println("</script>");
 			}
-<<<<<<< HEAD
-			BoardVO boardVO = new BoardDAO().getBoard(board_no);
-			BoardDAO boardDAO = new BoardDAO();
-			boardDAO.updateCount(boardVO);
-=======
 			
+
 			List<RepleVO> repleList = (List<RepleVO>) request.getAttribute("repleList");
->>>>>>> origin/th
 		%>
 		<nav class="navbar navbar-default">
 			<div class="navbar-header">
