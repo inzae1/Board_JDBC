@@ -46,6 +46,7 @@
 						<h3 style="text-align:center;">회원가입 화면</h3><br>
 						ID :<div class="form-group"></div>
 						<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="30">
+						<a href="icCheckForm.jsp"></a>
 						<input type="button" style="width:60pt;height:25pt;" class="btn btn-primary form-control" value="중복검사">
 
 						<div id = "checkid"></div>
@@ -99,6 +100,7 @@
 					checkPassword.value = "";
 				}
 			}
+			
 				
 		</script>
 		
