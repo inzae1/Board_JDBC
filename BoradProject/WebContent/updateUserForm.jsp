@@ -46,13 +46,13 @@
 			<div class="col-lg-4">
 				<div class="jumbotron" style="padding-top: 20px;">
 					<form method="post" action="userUpdate">
-						<h3 style="text-align:center;">회원정보 수정 화면</h3><br>
+						<h3 style="text-align:center;">회원정보 수정</h3><br>
 						<%
 						UserDAO dao = new UserDAO();
 						UserVO user = dao.getUserInfo((String) session.getAttribute("id"));
 						%>
 						ID : <div class="form-group">
-							<input type="text" class="form-control" name="id" maxlength="20" value="<%=user.getUserID()%>">
+							<input type="text" class="form-control" name="id" maxlength="20" value="<%=user.getUserID()%>" readonly>
 						</div>
 						비밀번호 : <div class="form-group">
 							<input type="password" class="form-control" id="password" name="userPassword" maxlength="20" value="<%=user.getUserPassword()%>">
@@ -88,8 +88,8 @@
 							</div>
 							<%} %>
 						</div>
-						<input type="submit" class="btn btn-primary form-control" value="회원정보 수정">
-					</form>
+						<input type="submit" class="btn btn-primary form-control" value="수정">
+ 					</form>
 				</div>
 			</div>
 		</div>
