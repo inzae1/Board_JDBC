@@ -90,7 +90,7 @@ public class BoardDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from board where board_no < ? order by board_no desc limit 10";
+		String sql = "select * from board where board_no < ? order by board_no desc limit 20";
 		ArrayList<BoardVO> list = new ArrayList<BoardVO>(); 
 		try {
 			conn = DBUtil.getConnection();
