@@ -22,14 +22,15 @@ public class UserUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
+		UserDAO dao = new UserDAO();
+		
 		UserVO user = new UserVO();
 		user.setUserID(request.getParameter("id"));
-		user.setUserPassword(request.getParameter("password"));
+		user.setUserPassword(request.getParameter("pw"));
 		user.setUserName(request.getParameter("name"));
 		user.setUserEmail(request.getParameter("email"));
 		user.setUserGender(request.getParameter("gender"));
 		
-		UserDAO dao = new UserDAO();
 		dao.updateUser(user);
 		
 		response.sendRedirect("main.jsp");

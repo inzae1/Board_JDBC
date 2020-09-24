@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>글쓰기</title>
+		<title>삭제</title>
 	</head>
 		
 	<body>
@@ -49,21 +49,12 @@
 				script.println("location.href='boardForm.jsp'");
 				script.println("</script>");
 			}else{
-			
-				if(request.getParameter("title") == null || request.getParameter("content") == null 
-						|| request.getParameter("title").equals("") || request.getParameter("content").equals("")){
-					PrintWriter script = response.getWriter();
-					script.println("<script>");
-					script.println("alert('입력이 모두 되지 않았습니다.')");
-					script.println("history.back()");
-					script.println("</script>");
-				}else{
 					BoardDAO boardDAO = new BoardDAO();
-					int result = boardDAO.update(board_no, request.getParameter("title"), request.getParameter("content"));
+					int result = boardDAO.delete(board_no);
 					if(result == -1){
 						PrintWriter script = response.getWriter();
 						script.println("<script>");
-						script.println("alert('글 수정에 실패했습니다.')");
+						script.println("alert('글 삭제에 실패했습니다.')");
 						script.println("history.back()");
 						script.println("</script>");
 					}else{
@@ -73,7 +64,6 @@
 						script.println("</script>");
 					}
 				}
-			}
 		%>
 	</body>
 </html>

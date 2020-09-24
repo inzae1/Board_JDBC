@@ -51,11 +51,11 @@ public class UserDAO {
 	public int updateUser(UserVO user) {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		
+		String SQL = "UPDATE USER SET userPassword = ?, userName = ?, userGender = ?, userEmail = ? WHERE userID = ?";
+
 		try {
 			conn = DBUtil.getConnection();
-			String SQL = "UPDATE USER SET userPassword = ?, userName = ?, userGender = ?, userEmail = ? WHERE userID = ?";
-			
+						
 			ps = conn.prepareStatement(SQL);
 			ps.setString(1, user.getUserPassword());
 			ps.setString(2, user.getUserName());
@@ -188,4 +188,5 @@ public class UserDAO {
 			}
 			return -2; // DB 오류
 		}
+		
 }

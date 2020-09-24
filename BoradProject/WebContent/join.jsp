@@ -44,13 +44,11 @@
 				<div class="jumbotron" style="padding-top: 20px;">
 					<form method="post" action="joinServlet">
 						<h3 style="text-align:center;">회원가입 화면</h3><br>
-						<div class="form-group">
-						ID :<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="30">
-							<a href="/checkIdServlet">
-								<input type="button" style="width:60pt;height:25pt;" class="btn btn-primary form-control" value="중복검사">
-							</a>
+						ID :<div class="form-group"></div>
+						<input type="text" class="form-control" placeholder="아이디" name="id" maxlength="30">
+						<input type="button" style="width:60pt;height:25pt;" class="btn btn-primary form-control" value="중복검사">
+
 						<div id = "checkid"></div>
-						</div>
 						비밀번호 : <div class="form-group">
 							<input type="password" class="form-control" id="userPassword" placeholder="숫자 4~12자리" name="userPassword" minlength="4" maxlength="12">
 						</div>
@@ -94,14 +92,14 @@
 					checkPassword.value = "";
 					userPassword.value = "";
 				}else if(userPassword.value === checkPassword.value) {
-					document.getElementById("my").innerHTML="<font color='blue'>사용가능한 비밀번호입니다.</font>";
+					document.getElementById("my").innerHTML="<font color='blue'>비밀번호가 일치합니다.</font>";
 					/* checkPassword.disabled=true; */
 				}else{
 					document.getElementById("my").innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
 					checkPassword.value = "";
-				} 
-				
+				}
 			}
+				
 		</script>
 		
 		<!-- <script src="https://code.jquery.com/jquery-1.11.3.js" integrity="sha256-IGWuzKD7mwVnNY01LtXxq3L84Tm/RJtNCYBfXZw3Je0=" crossorigin="anonymous"></script> -->
