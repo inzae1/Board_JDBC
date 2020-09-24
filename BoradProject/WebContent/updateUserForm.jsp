@@ -28,7 +28,7 @@
 					<li><a href="main.jsp">메인</a></li>
 					<li><a href="bbs.jsp">게시판</a></li>
 				</ul>
-				<ul class="nav navbar-nav navbar-right" disabled>
+				<!-- <ul class="nav navbar-nav navbar-right" disabled>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" role="button"
 							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
@@ -37,7 +37,7 @@
 							<li><a href="join.jsp">회원가입</a></li>
 						</ul>
 					</li>
-				</ul>
+				</ul> -->
 			</div>
 		</nav>
 		
