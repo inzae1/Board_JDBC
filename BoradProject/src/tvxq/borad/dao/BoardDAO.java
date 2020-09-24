@@ -192,4 +192,22 @@ public class BoardDAO {
 		}
 		return -1;
 	}
+	
+	public int updateCount(BoardVO board) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String SQL = "UPDATE board SET  views=views+1 WHERE board_no = ?";
+		
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(SQL);
+			ps.setInt(1, board.getBoard_no());
+			return ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+		
+	}
+	
 }
