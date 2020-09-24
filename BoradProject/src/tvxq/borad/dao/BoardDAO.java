@@ -171,7 +171,7 @@ public class BoardDAO {
 	public int delete(int board_no) {
 		Connection conn = null;
 		PreparedStatement ps = null;
-		String sql = "update board set bbsAvailable = 0 where board_no = ?";
+		String sql = "delete from board where board_no = ?";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
