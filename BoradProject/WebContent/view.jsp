@@ -33,7 +33,7 @@
 			
 
 			List<RepleVO> repleList = (List<RepleVO>) request.getAttribute("repleList");
-			BoardVO boardVO = new BoardDAO().getBoard(board_no);
+			
 			
 		%>
 		
