@@ -86,13 +86,13 @@
 		    </div>
 	 	</nav>
 	   		<section class="ftco-section testimony-section bg-light">
-			<div class="container">
-			<h2><b>오시는 길</b></h2>
-			<div id="map" style="width:600px;height:600px; float:left; margin-right:10px;"></div>
-			<h2><b>Road Map</b></h2>
-			<div id="roadview" style="width:400px;height:600px; float:left"></div>
-			</div>
-		</section>
+				<div class="container">
+					<h2><b>오시는 길</b></h2>
+					<div id="map" style="width:600px;height:600px; float:left; margin-right:10px;"></div>
+					<!-- <h2><b>Road Map</b></h2> -->
+					<div id="roadview" style="width:400px;height:600px;"></div>
+				</div>
+			</section>
 		
 	
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8a326cfc4e3978b97f03d37739dd513c"></script>
