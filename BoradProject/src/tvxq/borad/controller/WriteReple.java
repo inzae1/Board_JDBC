@@ -41,8 +41,8 @@ public class WriteReple extends HttpServlet {
 		repleDAO.addReple(repleVO);
 			
 		// post
-		RequestDispatcher rd = request.getRequestDispatcher("boardDetail");
-		rd.forward(request, response);
+		response.sendRedirect("boardDetail?boardNo=" + boardNo);
+		/* rd.forward(request, response); */
 		
 //		// get
 		//response.sendRedirect("boardDetail");

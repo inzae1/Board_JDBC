@@ -40,6 +40,7 @@ public class joinServlet extends HttpServlet {
 		user.setUserGender(request.getParameter("gender"));
 		user.setUserEmail(request.getParameter("email"));
 		
+		
 		if(session.getAttribute("id") != null){
 			userID = (String)session.getAttribute("id");
 		}

@@ -56,7 +56,7 @@
 						</div>
 						비밀번호 확인 : <div class="form-group">
 						<table>
-							<td><input type="password" class="form-control" id="checkPassword" placeholder="비밀번호 확인" name="checkPassword" maxlengt="20"></td>
+							<td><input type="password" class="form-control" id="checkPassword" placeholder="비밀번호 확인" name="checkPassword" maxlength="12"></td>
 							<td><input type="button" style="width:40pt;height:25pt;" class="btn btn-primary form-control" value="확인" onclick="check()"></td>
 						</div>
 							
@@ -95,7 +95,6 @@
 					userPassword.value = "";
 				}else if(userPassword.value === checkPassword.value) {
 					document.getElementById("my").innerHTML="<font color='blue'>비밀번호가 일치합니다.</font>";
-					/* checkPassword.disabled=true; */
 				}else{
 					document.getElementById("my").innerHTML="<font color='red'>비밀번호가 일치하지 않습니다.</font>";
 					checkPassword.value = "";

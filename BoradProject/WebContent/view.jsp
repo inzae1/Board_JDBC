@@ -19,7 +19,7 @@
 			String userID = null;
 			if(session.getAttribute("id") != null){
 				userID = (String)session.getAttribute("id");
-			}
+			} 
 			
 			
 			/* int board_no = 0;
@@ -97,7 +97,7 @@
 						<a href="#" class="dropdown-toggle" role="button"
 							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li class="active"><a href="login.jsp">로그인</a></li>
+							<li><a href="login.jsp">로그인</a></li>
 							<li><a href="join.jsp">회원가입</a></li>
 						</ul>
 					</li>
@@ -186,18 +186,34 @@
 					%>
 							</tbody>
 						</table>
+						<% if(userID != null){
+							%>
+					
 						<form action="writeReple" method="post">
 							<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 								<tbody>
 									<tr>
 										<input hidden name="boardNo" value=<%=boardVO.getBoard_no() %>>
 										<input hidden name="userId" value=<%=userID %>>
-										<td><textarea type="text" class="form-control" placeholder="댓글 내용" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
+										<td><textarea type="text" class="form-control"  placeholder="댓글 내용" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
 									</tr>
 								</tbody>
 							</table>
 							<input type="submit" class="btn btn-primary pull-right" value="댓글 입력">
 						</form>
+						<% } else{ %>
+						<form action="login.jsp" method="post">
+						<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+								<tbody>
+									<tr>
+										<input hidden name="boardNo" value=<%=boardVO.getBoard_no() %>>
+										<input hidden name="userId" value=<%=userID %>>
+										<td><textarea type="text" class="form-control" readonly placeholder="댓글을 입력하려면 로그인을 하세요" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
+									</tr>
+								</tbody>
+							</table>
+							<input type="submit" class="btn btn-primary pull-right" value="로그인">
+							<%} %>
 					</div>
 				</div>
 				
