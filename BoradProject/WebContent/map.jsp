@@ -4,8 +4,15 @@
 <html>
 <head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width", initial-scale="1">
-		<link rel="stylesheet" href="css/bootstrap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="css/animate.css">
+	    <link rel="stylesheet" href="css/owl.carousel.min.css">
+	    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+	    <link rel="stylesheet" href="css/magnific-popup.css"> 
+	    <link rel="stylesheet" href="css/flaticon.css">
+	    <link rel="stylesheet" href="css/style.css">
 		<title>오시는 길</title>
 		<style>
 			#aa {
@@ -30,28 +37,23 @@
 				userID = (String)session.getAttribute("id");
 			}
 		%>
-		 <nav class="navbar navbar-default" style="background-color: #e3f2fd;">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>		
-				</button>
-				<a class="navbar-brand" href="main.jsp" style="color: #008000;">Play data</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="nav-item"><a href="main.jsp">메인</a></li>
-					<li class="nav-item"><a href="boardForm.jsp">게시판</a></li>
-					<li class="nav-item"><a href="map.jsp">오시는길</a></li>
-				</ul>
-				<%
+		 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		    <div class="container-fluid">
+		      <a class="navbar-brand" href="main.jsp">Play Data</a>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="oi oi-menu"></span> Menu
+		      </button>
+	
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		        <ul class="navbar-nav ml-auto">
+		          <li class="nav-item"><a href="main.jsp" class="nav-link">메인</a></li>
+		          <li class="nav-item"><a href="boardForm.jsp" class="nav-link">게시판</a></li>
+		          <li class="nav-item"><a href="map.jsp" class="nav-link">지도</a></li>
+		          <%
 					// 로그인이 되어 있지 않다면
 					if(userID == null){
-				%>
-				<ul class="nav navbar-nav navbar-right">
+				  %>
+				
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" role="button"
 							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
@@ -60,11 +62,11 @@
 							<li><a href="join.jsp">회원가입</a></li>
 						</ul>
 					</li>
-				</ul>
+				
 				<%
 					} else {
 				%>
-				<ul class="nav navbar-nav navbar-right">
+				
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" role="button"
 							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">회원관리<span class="caret"></span></a>
@@ -73,17 +75,23 @@
 							<li><a href="updateUserForm.jsp">정보수정</a></li>
 						</ul>
 					</li>
-				</ul>
+				
 				<%
 					}
 				%>
-			</div>
-		</nav>
-
-		<h2><b>오시는 길</b></h2>
+		        </ul>
+		        
+		      </div>
+		    </div>
+	 	</nav>
+   		<section class="ftco-section testimony-section bg-light">
+		<div class="container"><h2><b>오시는 길</b></h2>
 		<div id="map" style="width:800px;height:600px; float:left; margin-right:10px;"></div>
 		<h2><b>Road Map</b></h2>
 		<div id="roadview" style="width:400px;height:600px; float:left"></div>
+		</div>
+		</section>
+		
 	
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8a326cfc4e3978b97f03d37739dd513c"></script>
 		<script>
@@ -116,7 +124,21 @@
 		});
 		</script>
 
-
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+ 		<script src="js/bootstrap.js"></script>
+ 	    <script src="js/jquery.min.js"></script>
+	    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+   	    <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/scrollax.min.js"></script>
+		<script src="js/google-map.js"></script>
+		<script src="js/main.js"></script>
 
 </body>
 </html>
