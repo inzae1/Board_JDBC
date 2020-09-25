@@ -87,7 +87,7 @@
 	   		<section class="ftco-section testimony-section bg-light">
 			<div class="container">
 			<h2><b>오시는 길</b></h2>
-			<div id="map" style="width:400px;height:600px; float:left; margin-right:10px;"></div>
+			<div id="map" style="width:600px;height:600px; float:left; margin-right:10px;"></div>
 			<h2><b>Road Map</b></h2>
 			<div id="roadview" style="width:400px;height:600px; float:left"></div>
 			</div>
