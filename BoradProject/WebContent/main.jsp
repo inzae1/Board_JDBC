@@ -31,7 +31,7 @@
 				userID = (String)session.getAttribute("id");
 			}
 		%>
-		 <nav class="navbar navbar-default">
+		 <nav class="navbar navbar-default" style="background-color: #e3f2fd;">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -40,14 +40,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>		
 				</button>
-				<a href="main.jsp" class="logo">
-					<img src="images/7.png" alt="">
-				</a>
+				<a class="navbar-brand" href="main.jsp" style="color: #008000;">Play data</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="main.jsp">메인</a></li>
-					<li><a href="boardForm.jsp">게시판</a></li>
+					<li class="nav-item"><a href="main.jsp">메인</a></li>
+					<li class="nav-item"><a href="boardForm.jsp">게시판</a></li>
 				</ul>
 				<%
 					// 로그인이 되어 있지 않다면
