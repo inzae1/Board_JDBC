@@ -24,8 +24,6 @@ public class WriteReple extends HttpServlet {
 		response.setContentType("text/html; charset=utf-8");
 		request.setCharacterEncoding("UTF-8");
 		
-		HttpSession session = request.getSession();
-		
 		/*
 		 * String userID = null; if(session.getAttribute("id") != null){ userID =21232123123213123123132132
 		 * (String)session.getAttribute("id"); }
@@ -41,13 +39,13 @@ public class WriteReple extends HttpServlet {
 		
 		RepleDAO repleDAO = new RepleDAO();
 		repleDAO.addReple(repleVO);
-		
+			
 		// post
 		RequestDispatcher rd = request.getRequestDispatcher("boardDetail");
 		rd.forward(request, response);
 		
 //		// get
-//		response.sendRedirect("boardDetail");
+		//response.sendRedirect("boardDetail");
 		
 		
 		
