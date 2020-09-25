@@ -143,8 +143,8 @@
 	        <div class="row no-gutters slider-text align-items-center">
 	          <div class="col-md-10 col-lg-7 ftco-animate d-flex align-items-end">
 	          	<div class="text">
-		            <h1 class="mb-4">JSP 게시판 <span>동방신기</span> 아아아아아아아</h1>
-		            <p style="font-size: 18px;">dkdkdkdkdkdkdkdkdkdkdkdkdkdkdkdkddk</p>
+		            <h1 class="mb-4">JSP 게시판 <span>동방신기 (TVXQ)</span> </h1>
+		            <p style="font-size: 18px;">"팀원 : 박해린 윤인재 정동진 이성현 김태형"</p>
 		            <div class="d-flex meta">
 			        	<div class=""><p class="mb-0"><a href="boardForm.jsp" class="btn btn-primary py-3 px-2 px-md-4">게시판으로 이동</a></p></div>
 			        </div>
@@ -173,9 +173,9 @@
 	                <div class="testimony-wrap py-4">
 	                  <div class="text">
 	                  	<span class="fa fa-quote-left"></span>
-	                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+	                    <p class="mb-4">If you do not walk today, you will have to run tomorrow. and United we stand, divided we fall.</p>
 	                    <div class="d-flex align-items-center">
-	                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+	                    	<div class="user-img" style="background-image: url(images/567.png)"></div>
 	                    	<div class="pl-3">
 			                    <p class="name">윤인재</p>
 			                    <span class="position">Marketing Manager</span>
@@ -235,7 +235,7 @@
 	                  	<span class="fa fa-quote-left"></span>
 	                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 	                    <div class="d-flex align-items-center">
-	                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+	                    	<div class="user-img" style="background-image: url(images/1234.png)"></div>
 	                    	<div class="pl-3">
 			                    <p class="name">박해린</p>
 			                    <span class="position">Marketing Manager</span>
