@@ -20,7 +20,6 @@
 	    <link rel="stylesheet" href="css/magnific-popup.css"> 
 	    <link rel="stylesheet" href="css/flaticon.css">
 	    <link rel="stylesheet" href="css/style.css">
-	    <link rel="stylesheet" href="css/bootstrap.css">
 	<title>전체 게시글</title>
     
     <style type="text/css">
