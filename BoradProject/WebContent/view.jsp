@@ -163,25 +163,23 @@
 						<tbody>
 							<tr>
 								<td style="width: 20%;">글 제목</td>
-								<td colspan="3"><%=boardVO.getTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
+								<td style="width: 60%; 'colspan="3"><%=boardVO.getTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
+								<td style="width: 10%;">조회수</td>
+								<td style="width: 5%;"><%=boardVO.getViews() %></td>
 							</tr>
 							<tr>
-								<td>작성자</td>
-								<td colspan="3"><%=boardVO.getUserID() %></td>
+								<td style="width: 20%;">작성자</td>
+								<td style="width: 60%; colspan="3"><%=boardVO.getUserID() %></td>
+								<td style="width: 10%;">추천수</td>
+								<td style="width: 10%;"><%=boardVO.getLikes() %></td>
 							</tr>
 							<tr>
 								<td>작성일자</td>
 								<td colspan="3"><%=boardVO.getReg_date() %></td>
 							</tr>
 							<tr>
-								<td>내용</td>
-								<td colspan="3" style="height: 200px; text-align: left;"><%=boardVO.getContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
-							</tr>
-							<tr>
-								<td>조회수</td>
-								<td><%=boardVO.getViews() %></td>
-								<td>추천수</td>
-								<td><%=boardVO.getLikes() %></td>
+								<td style="text-align: center";>내용</td>
+								<td colspan="3" style="height: 400px; width: 100%; text-align: left;"><%=boardVO.getContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
 							</tr>
 						</tbody>
 					</table>
