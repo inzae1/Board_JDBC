@@ -236,7 +236,8 @@
 								<%
 									}else{
 								%>
-									<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>" class="btn btn-danger">추천</a>
+									<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>" class="btn btn-info"><i class="glyphicon glyphicon-thumbs-up"></i></a>
+									<a onclick="return confirm('비추천하시겠습니까?')" href="./unlikeAction.jsp?board_no=<%=board_no %>" class="btn btn-info"><i class="glyphicon glyphicon-thumbs-down"></i></a>
 								<%
 									}
 								%>
