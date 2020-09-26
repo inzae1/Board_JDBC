@@ -31,7 +31,7 @@
 		</style>
 		<style type="text/css">
         #wrap {
-            width: 800px;
+            width: 1200px;
             margin: 0 auto 0 auto;
         }
         #topForm{
