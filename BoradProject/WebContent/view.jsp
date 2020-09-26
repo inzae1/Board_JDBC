@@ -175,7 +175,7 @@
 							</tr>
 							<tr>
 								<td>내용</td>
-								<td colspan="3" style="min-height: 200px; text-align: left;"><%=boardVO.getContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
+								<td colspan="3" style="height: 200px; text-align: left;"><%=boardVO.getContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
 							</tr>
 							<tr>
 								<td>조회수</td>
@@ -198,11 +198,6 @@
 								<thead style="background-color: #eeeeee;">
 									<tr>
 										<th colspan="2" style="background-color: #eeeeee; text-align: center;">댓글</th>
-									</tr>
-									<tr>
-										<th style="width: 20%; text-align: center;">작성자</td>
-										<th colspan="2" style="text-align: center;">댓글 내용</td>		
-									</tr>
 								</thead>
 								<tbody>
 									
