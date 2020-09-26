@@ -81,6 +81,21 @@ public class BoardDAO {
 		return -1;
 	}
 	
+	public int getUnLikes(int board_no) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String sql = "update board set likes = likes - 1 where board_no = ?";
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, board_no);
+			return ps.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	public ArrayList<BoardVO> getList(int pageNumber){
 		Connection conn = null;
 		PreparedStatement ps = null;
