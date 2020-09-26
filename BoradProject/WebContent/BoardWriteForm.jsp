@@ -102,21 +102,18 @@
 				<div class="row no-gutters slider-text align-items-center">
 		
 		<div id="wrap">
-				<form method="post" action="writeServlet" enctype="multipart/form-data">
+				<form method="post" action="writeServlet">
 					
-					<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-						<thead>
-							<tr>
-								<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
-							</tr>		
-						</thead>
-					</table>
-		</div>
-					
-					<input type="text" class="form-control" placeholder="글 제목을 입력해주세요" name="title" maxlength="50"">
-						<textarea type="text" class="form-control" placeholder="내용을 입력해주세요" name="content" maxlength="2048" style="height: 1000px;"></textarea>
-							
-					<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+					<div class="form-group">
+					<label for="subject">Title</label>
+					<input type="text" class="form-control" name ="title" id="subject" placeholder="Enter title">
+					</div>
+										
+					<div class="form-group">
+					<label for="content">Content:</label>
+					<textarea class="form-control" rows="10" name="content" id="content" placeholder="Enter content"></textarea>
+					<br>
+					<input type="submit" class="btn btn-primary pull-right" value="글쓰기" style="width:60pt;height:30pt;">
 				</form>
 			</div>
 		
