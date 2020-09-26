@@ -6,78 +6,85 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width", initial-scale="1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
 		<title>Login page</title>
 	</head>
 	
 	<body>
-	<nav class="navbar navbar-default" style="background-color: #e3f2fd;">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>		
-				</button>
-				<a class="navbar-brand" href="main.jsp" style="color: #008000;">Play data</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="main.jsp">메인</a></li>
-					<li><a href="boardForm.jsp">게시판</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" role="button"
-							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="login.jsp">로그인</a></li>
-							<li><a href="join.jsp">회원가입</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</nav>
-<!-- <style>
-	form {
-	margin: 0 auto;
-	width: 300px;
-	}
-</style> -->
-<div class="container">
-	<div class="col-lg-4"></div>
-	<div class="col-lg-4">
-		<div class="jumbotron" style="padding-top: 20px;">
-<header>
-	<h2 style="text-align:center;"><b>로그인</b></h2>
-</header>
-	<br>
-	<fieldset>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		    <div class="container-fluid">
+		    	<a class="navbar-brand" href="main.jsp">Play Data</a>
+		    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        	<span class="oi oi-menu"></span> Menu
+		      	</button>
 	
-	<form action="login1" method=post >
-		<br>
-		<label for="loginId" style="font-size:15px">아이디</label>
-		<input style="text" name="id" class="form-control" label=loginId placeholder="ID"><br>
-			
-		<label for="loginPw" style="font-size:15px">비밀번호</label>
-		<input type="password" name="pw" class="form-control" maxlength='20' size=20 label=loginPw placeholder="Password"><br><br>
-		<div id="checkid"></div>
-		<input type="submit" value="로그인" class="btn btn-primary form-control"><br>
-		
-		<a href=findId.jsp style="font-size:10px; color:gray" >아이디 찾기</a> 
-		<a href=findPassword.jsp style="font-size:10px; color:gray" >/비밀번호 찾기</a>&nbsp;&nbsp;&nbsp;
-		<a href=join.jsp style="font-size:10px; color:gray">회원가입</a>	
-	</form>
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		      	<ul class="navbar-nav ml-auto">
+		          <li class="nav-item"><a href="main.jsp" class="nav-link">메인</a></li>
+		          <li class="nav-item"><a href="boardForm.jsp" class="nav-link">게시판</a></li>
+		          <li class="nav-item"><a href="map.jsp" class="nav-link">지도</a></li>
+				  <li class="dropdown">
+				  	<a class="dropdown-toggle" role="button"
+						aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="login.jsp">로그인</a></li>
+						<li><a href="join.jsp">회원가입</a></li>
+					</ul>
+				  </li>
+		        </ul>
+		      </div>
+		    </div>
+	 	</nav> 
+	 	
+		<section class="hero-wrap" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.3">
+			<div class="container">
+				<div class="row no-gutters slider-text align-items-center">
+					<div class="col-lg-4"></div>
+					<div class="col-lg-4">
+						<div class="jumbotron" style="padding-top: 20px;">
+							<header>
+								<h2 style="text-align:center;"><b>로그인</b></h2>
+							</header>
+								<br>
+								<fieldset>
+								
+								<form action="login1" method=post >
+									<br>
+									<label for="loginId" style="font-size:15px">아이디</label>
+									<input style="text" name="id" class="form-control" label=loginId placeholder="ID"><br>
+										
+									<label for="loginPw" style="font-size:15px">비밀번호</label>
+									<input type="password" name="pw" class="form-control" maxlength='20' size=20 label=loginPw placeholder="Password"><br><br>
+									<div id="checkid"></div>
+									<input type="submit" value="로그인" class="btn btn-primary form-control"><br>
+									
+									<a href=findId.jsp style="font-size:10px; color:gray" >아이디 찾기</a> 
+									<a href=findPassword.jsp style="font-size:10px; color:gray" >/비밀번호 찾기</a>&nbsp;&nbsp;&nbsp;
+									<a href=join.jsp style="font-size:10px; color:gray">회원가입</a>	
+								</form>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
+		
 	
-	
-		<!-- <script src="https://code.jquery.com/jquery-1.11.3.js" integrity="sha256-IGWuzKD7mwVnNY01LtXxq3L84Tm/RJtNCYBfXZw3Je0=" crossorigin="anonymous"></script> -->
-		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qcyjSMfHjOMaLKfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  		<script src="js/bootstrap.js"></script>
+ 	    <script src="js/jquery.min.js"></script>
+	    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+   	    <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/scrollax.min.js"></script>
+		<script src="js/google-map.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

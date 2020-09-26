@@ -126,7 +126,7 @@
 		});
 		</script>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  		<script src="js/bootstrap.js"></script>
  	    <script src="js/jquery.min.js"></script>
 	    <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -141,6 +141,5 @@
 		<script src="js/scrollax.min.js"></script>
 		<script src="js/google-map.js"></script>
 		<script src="js/main.js"></script>
-
 </body>
 </html>
