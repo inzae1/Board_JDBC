@@ -46,7 +46,7 @@ public class WriteReple extends HttpServlet {
 		
 //		// get
 		//response.sendRedirect("boardDetail");
-		
+			
 		
 		
 	}

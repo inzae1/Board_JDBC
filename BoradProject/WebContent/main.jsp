@@ -106,9 +106,9 @@
 					if(userID == null){
 				  %>
 				
-					<li class="dropdown">
+					<li class="nav-item dropdown">
 						<a href="#" class="dropdown-toggle" role="button"
-							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
+							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="nav-link"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="login.jsp">로그인</a></li>
 							<li><a href="join.jsp">회원가입</a></li>
