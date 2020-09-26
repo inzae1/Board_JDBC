@@ -8,38 +8,39 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width", initial-scale="1">
-		<link rel="stylesheet" href="css/bootstrap.css">
-	    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
-	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	    <link rel="stylesheet" href="css/animate.css">
-	    <link rel="stylesheet" href="css/owl.carousel.min.css">
-	    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-	    <link rel="stylesheet" href="css/magnific-popup.css"> 
-	    <link rel="stylesheet" href="css/flaticon.css">
-	    <link rel="stylesheet" href="css/style.css">
-	<title>전체 게시글</title>
-    
-    <style type="text/css">
-        #wrap {
-            width: 1200px;
-            margin: 0 auto 0 auto;
-        }
-        #topForm{
-            text-align :right;
-        }
-        #board, #pageForm, #searchForm{
-            text-align :center;
-        }
-        
-        #bList{
-            text-align :center;
-        }
-        a, a:hover{
-			color: #000000;
-			text-decoration: none;}
-    </style>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width", initial-scale="1">
+			<link rel="stylesheet" href="css/bootstrap.css">
+		    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+		    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		    <link rel="stylesheet" href="css/animate.css">
+		    <link rel="stylesheet" href="css/owl.carousel.min.css">
+		    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+		    <link rel="stylesheet" href="css/magnific-popup.css"> 
+		    <link rel="stylesheet" href="css/flaticon.css">
+		    <link rel="stylesheet" href="css/style.css">
+		<title>전체 게시글</title>
+	    
+	    <style type="text/css">
+	        #wrap {
+	            width: 1200px;
+	            margin: 0 auto 0 auto;
+	        }
+	        #topForm{
+	            text-align :right;
+	        }
+	        #board, #pageForm, #searchForm{
+	            text-align :center;
+	        }
+	        
+	        #bList{
+	            text-align :center;
+	        }
+	        a, a:hover{
+				color: #000000;
+				text-decoration: none;}
+	    </style>
+    </head>
 	
 	<body>
 		<%
@@ -148,126 +149,124 @@
 	 	</nav>
 		
 		
-		
-		<div class="container">
-			<div class="row no-gutters slider-text align-items-center">
-			<div id="wrap">
-		    <div id="board">
-				 <table class="table table-striped" width="800" border="3" bordercolor="lightgray">
-					<thead>
-						<tr heigh="30">
-							<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
-						</tr>		
-					</thead>
-					<tbody>
-						<tr>
-							<td style="width: 20%;">글 제목</td>
-							<td colspan="2"><%=boardVO.getTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
-						</tr>
-						<tr>
-							<td>작성자</td>
-							<td colspan="2"><%=boardVO.getUserID() %></td>
-						</tr>
-						<tr>
-							<td>작성일자</td>
-							<td><%=boardVO.getReg_date() %></td>
-						</tr>
-						<tr>
-							<td>내용</td>
-							<td colspan="2" style="min-height: 200px; text-align: left;"><%=boardVO.getContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
-						</tr>
-						<tr>
-							<td>조회수</td>
-							<td><%=boardVO.getViews() %></td>
-						</tr>
-						<tr>
-							<td>추천수</td>
-							<td><%=boardVO.getLikes() %></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			</div>
-				
-				<div class="container">
-					<div class="row">
-					<%
-					if(repleList != null) {
-					%>
-			<div id="wrap">
-						<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-							<thead style="background-color: #eeeeee;">
-								<tr>
-									<th colspan="2" style="background-color: #eeeeee; text-align: center;">댓글</th>
-								</tr>
-								<tr>
-									<th style="width: 20%; text-align: center;">작성자</td>
-									<th colspan="2" style="text-align: center;">댓글 내용</td>		
-								</tr>
-							</thead>
-							<tbody>
-								
-					<%
-						for(RepleVO repleVO : repleList) {
-					%>
-								<tr>
-									<td style="width: 20%;"><%=repleVO.getUserId() %></td>
-									<td colspan="2"><%=repleVO.getContent() %></td>
-								</tr>
-					<%		
-						}
-					}
-					%>
-							</tbody>
-						</table>
-						<% if(userID != null){
-							%>
+		<section class="ftco-section testimony-section" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.3">
+			<div class="container">
+				<div class="row no-gutters slider-text align-items-center">
+				<div id="wrap">
+			    <div id="board">
+					 <table class="table table-striped" width="800" border="3" bordercolor="lightgray">
+						<thead>
+							<tr heigh="30">
+								<th colspan="4" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
+							</tr>		
+						</thead>
+						<tbody>
+							<tr>
+								<td style="width: 20%;">글 제목</td>
+								<td colspan="3"><%=boardVO.getTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
+							</tr>
+							<tr>
+								<td>작성자</td>
+								<td colspan="3"><%=boardVO.getUserID() %></td>
+							</tr>
+							<tr>
+								<td>작성일자</td>
+								<td colspan="3"><%=boardVO.getReg_date() %></td>
+							</tr>
+							<tr>
+								<td>내용</td>
+								<td colspan="3" style="min-height: 200px; text-align: left;"><%=boardVO.getContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replace(">","&gt;").replaceAll("\n","<br>") %></td>
+							</tr>
+							<tr>
+								<td>조회수</td>
+								<td><%=boardVO.getViews() %></td>
+								<td>추천수</td>
+								<td><%=boardVO.getLikes() %></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
 					
-						<form action="writeReple" method="post">
+					<div class="container">
+						<div class="row">
+						<%
+						if(repleList != null) {
+						%>
+				<div id="wrap">
 							<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-								<tbody>
+								<thead style="background-color: #eeeeee;">
 									<tr>
-										<input hidden name="boardNo" value=<%=boardVO.getBoard_no() %>>
-										<input hidden name="userId" value=<%=userID %>>
-										<td><textarea type="text" class="form-control"  placeholder="댓글 내용" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
+										<th colspan="2" style="background-color: #eeeeee; text-align: center;">댓글</th>
 									</tr>
+									<tr>
+										<th style="width: 20%; text-align: center;">작성자</td>
+										<th colspan="2" style="text-align: center;">댓글 내용</td>		
+									</tr>
+								</thead>
+								<tbody>
+									
+						<%
+							for(RepleVO repleVO : repleList) {
+						%>
+									<tr>
+										<td style="width: 20%;"><%=repleVO.getUserId() %></td>
+										<td colspan="2"><%=repleVO.getContent() %></td>
+									</tr>
+						<%		
+							}
+						}
+						%>
 								</tbody>
 							</table>
-							<input type="submit" class="btn btn-primary pull-right" value="댓글 입력">
-						</form>
-						<% } else{ %>
-						<form action="login.jsp" method="post">
-						<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-								<tbody>
-									<tr>
-										<input hidden name="boardNo" value=<%=boardVO.getBoard_no() %>>
-										<input hidden name="userId" value=<%=userID %>>
-										<td><textarea type="text" class="form-control" readonly placeholder="댓글을 입력하려면 로그인을 하세요" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
-									</tr>
-								</tbody>
-							</table>
-							<input type="submit" class="btn btn-primary pull-right" value="로그인">
-							<%} %>
+							<% if(userID != null){
+								%>
+						
+							<form action="writeReple" method="post">
+								<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+									<tbody>
+										<tr>
+											<input hidden name="boardNo" value=<%=boardVO.getBoard_no() %>>
+											<input hidden name="userId" value=<%=userID %>>
+											<td><textarea type="text" class="form-control"  placeholder="댓글 내용" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
+										</tr>
+									</tbody>
+								</table>
+								<input type="submit" class="btn btn-primary pull-right" value="댓글 입력">
+							</form>
+							<% } else{ %>
+							<form action="login.jsp" method="post">
+							<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+									<tbody>
+										<tr>
+											<input hidden name="boardNo" value=<%=boardVO.getBoard_no() %>>
+											<input hidden name="userId" value=<%=userID %>>
+											<td><textarea type="text" class="form-control" readonly placeholder="댓글을 입력하려면 로그인을 하세요" name="reple" maxlength="2048" style="height: 50px;"></textarea></td>
+										</tr>
+									</tbody>
+								</table>
+								<input type="submit" class="btn btn-primary pull-right" value="로그인">
+								<%} %>
+						</div>
+					</div>
+					
+					<a href="boardForm.jsp" class="btn btn-primary">목록</a>
+					<%
+						if(userID != null && userID.equals(boardVO.getUserID())){
+					%>
+						<a href="update.jsp?board_no=<%=board_no %>" class="btn btn-primary">수정</a>
+						<a href="deleteAction.jsp?board_no=<%=board_no %>" class="btn btn-primary">삭제</a>
+					<%
+						}else{
+					%>
+						<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>" class="btn btn-danger">추천</a>
+					<%
+						}
+					%>
 					</div>
 				</div>
-				
-				
-				<a href="boardForm.jsp" class="btn btn-primary">목록</a>
-				<%
-					if(userID != null && userID.equals(boardVO.getUserID())){
-				%>
-					<a href="update.jsp?board_no=<%=board_no %>" class="btn btn-primary">수정</a>
-					<a href="deleteAction.jsp?board_no=<%=board_no %>" class="btn btn-primary">삭제</a>
-				<%
-					}else{
-				%>
-					<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>" class="btn btn-danger">추천</a>
-				<%
-					}
-				%>
 			</div>
-		</div>
-		</div>
+		</section>
 		
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  		<script src="js/bootstrap.js"></script>
