@@ -29,6 +29,26 @@
 			  color: #fff;
 			}
 		</style>
+		<style type="text/css">
+        #wrap {
+            width: 800px;
+            margin: 0 auto 0 auto;
+        }
+        #topForm{
+            text-align :right;
+        }
+        #board, #pageForm, #searchForm{
+            text-align :center;
+        }
+        
+        #bList{
+            text-align :center;
+        }
+        a, a:hover{
+			color: #000000;
+			text-decoration: none;}
+    </style>
+    
 	</head>
 <body>
 		<%
@@ -81,16 +101,20 @@
 					}
 				%>
 		        </ul>
-		        
 		      </div>
 		    </div>
 	 	</nav>
-	   		<section class="ftco-section testimony-section bg-light">
+	 	
+	   		<section class="hero-wrap" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.3">
 				<div class="container">
+				<div class="row no-gutters slider-text align-items-center">
+				<div id="wrap">
 					<h2><b>오시는 길</b></h2>
 					<div id="map" style="width:600px;height:600px; float:left; margin-right:10px;"></div>
 					<!-- <h2><b>Road Map</b></h2> -->
 					<div id="roadview" style="width:400px;height:600px;"></div>
+				</div>
+				</div>
 				</div>
 			</section>
 		
