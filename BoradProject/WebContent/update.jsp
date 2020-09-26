@@ -5,12 +5,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width", initial-scale="1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale="1">
 		<link rel="stylesheet" href="css/bootstrap.css">
-		<title>update</title>
+	    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="css/animate.css">
+	    <link rel="stylesheet" href="css/owl.carousel.min.css">
+	    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+	    <link rel="stylesheet" href="css/magnific-popup.css"> 
+	    <link rel="stylesheet" href="css/flaticon.css">
+	    <link rel="stylesheet" href="css/style.css">
+	<title>게시글 쓰기</title>
+    
+    <style type="text/css">
+        #wrap {
+            width: 2000px;
+            margin: 0 auto;
+        }
+        #topForm{
+            text-align :right;
+        }
+        #board, #pageForm, #searchForm{
+            text-align :center;
+        }
+
+        #bList{
+            text-align :center;
+        }
+        a, a:hover{
+			color: #000000;
+			text-decoration: none;}
+    </style>
 	</head>
-	
+		
 	<body>
 		<%
 			String userID = null;
@@ -31,76 +59,75 @@
 			}
 			BoardVO boardVO = new BoardDAO().getBoard(board_no);
 		%>
-		<nav class="navbar navbar-default">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>		
-				</button>
-				<a class="navbar-brand" href="main.jsp">JSP 게시판</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="main.jsp">메인</a></li>
-					<li class="active"><a href="boardForm.jsp">게시판</a></li>
-				</ul>
-				<%
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		    <div class="container-fluid">
+		    	<a class="navbar-brand" href="main.jsp">Play Data</a>
+		    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		        	<span class="oi oi-menu"></span> Menu
+		      	</button>
+	
+		      <div class="collapse navbar-collapse" id="ftco-nav">
+		      	<ul class="navbar-nav ml-auto">
+		          <li class="nav-item"><a href="main.jsp" class="nav-link">메인</a></li>
+		          <li class="nav-item"><a href="boardForm.jsp" class="nav-link">게시판</a></li>
+		          <li class="nav-item"><a href="map.jsp" class="nav-link">지도</a></li>
+		          <%
 					// 로그인이 되어 있지 않다면
 					if(userID == null){
-				%>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" role="button"
-							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li class="active"><a href="login.jsp">로그인</a></li>
-							<li><a href="join.jsp">회원가입</a></li>
-						</ul>
-					</li>
-				</ul>
+				  %>
+				<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    접속
+					  </button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
+						<li><a class="dropdown-item" href="join.jsp">회원가입</a></li>
+					</ul>
+				</li>
+				</div>
 				<%
 					} else {
 				%>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" role="button"
-							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">회원관리<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="logoutAction.jsp">로그아웃</a></li>
-						</ul>
-					</li>
-				</ul>
+				<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    회원관리
+					  </button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="logoutAction.jsp">로그아웃</a></li>
+						<li><a class="dropdown-item" href="updateUserForm.jsp">정보수정</a></li>
+						<li><a class="dropdown-item" href="deleteUser.jsp">회원탈퇴</a></li>
+					</ul>
+				</li>
+				</div>
 				<%
 					}
 				%>
-			</div>
-		</nav>
+		        </ul>
+		      </div>
+		    </div>
+	 	</nav>
 		
-		<div class="container">
-			<div class="row">
+		<section class="hero-wrap" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.3">
+			<div class="container">
+				<div class="row no-gutters slider-text align-items-center">
+		
+		<div id="wrap">
 				<form method="post" action="updateAction.jsp?board_no=<%=board_no %>">
-					<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-						<thead>
-							<tr>
-								<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 수정 양식</th>
-							</tr>		
-						</thead>
-						<tbody>
-							<tr>
-								<td><input type="text" class="form-control" placeholder="글 제목" name="title" maxlength="50" value=<%=boardVO.getTitle() %>></td>
-							</tr>
-							<tr>
-								<td><textarea class="form-control" placeholder="글 내용" name="content" maxlength="2048" style="height: 350px;"><%=boardVO.getContent() %></textarea></td>
-							</tr>
-						</tbody>
-					</table>
-					<input type="submit" class="btn btn-primary pull-right" value="글 수정">
+				<div class="form-group">
+					<label for="subject">Title</label>
+					<input type="text" class="form-control" name ="title" id="subject" placeholder="Enter title" value=<%=boardVO.getTitle() %>>
+					</div>
+										
+					<div class="form-group">
+					<label for="content">Content:</label>
+					<textarea class="form-control" rows="10" name="content" id="content" placeholder="Enter content"><%=boardVO.getContent() %>></textarea>
+					<br>
+					<input type="submit" class="btn btn-primary pull-right" value="글수정" style="width:60pt;height:30pt;">
 				</form>
 			</div>
 		</div>
+		</div>
+		</section>
 		
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  		<script src="js/bootstrap.js"></script>

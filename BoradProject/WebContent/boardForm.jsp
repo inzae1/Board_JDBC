@@ -106,12 +106,14 @@
 		      </div>
 		    </div>
 	 	</nav>
-
+		
 		<section class="hero-wrap" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.3">
 			<div class="container">
 				<div class="row no-gutters slider-text align-items-center">
+		
 		<div id="wrap">
 		    <div id="board">
+		    	<h2><b>자유게시판</b></h2><br>
 		        <table class="table table-striped" width="800" border="3" bordercolor="lightgray">
 		            <thead>
 			            <tr heigh="30">
