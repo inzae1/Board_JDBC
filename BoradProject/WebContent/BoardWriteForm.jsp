@@ -21,9 +21,8 @@
     
     <style type="text/css">
         #wrap {
-            width: 800px;
-            height: 500px;
-            margin: 0 auto 0 auto;
+            width: 2000px;
+            margin: 0 auto;
         }
         #topForm{
             text-align :right;
@@ -31,7 +30,7 @@
         #board, #pageForm, #searchForm{
             text-align :center;
         }
-        
+
         #bList{
             text-align :center;
         }
@@ -95,33 +94,32 @@
 		      </div>
 		    </div>
 	 	</nav>
+	 	
+	 	   
 		
 		<section class="hero-wrap" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.3">
 			<div class="container">
 				<div class="row no-gutters slider-text align-items-center">
+		
 		<div id="wrap">
-				<form method="post" action="writeServlet">
+				<form method="post" action="writeServlet" enctype="multipart/form-data">
+					
 					<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 						<thead>
 							<tr>
 								<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
 							</tr>		
 						</thead>
-						<tbody>
-							<tr>
-								<td><input type="text" class="form-control" placeholder="글 제목" name="title" maxlength="50""></td>
-							</tr>
-							</div>
-							<tr>
-								<td><textarea type="text" class="form-control" placeholder="글 내용" name="content" maxlength="2048" style="height: 900px;"></textarea></td>
-							</tr>
-						</tbody>
 					</table>
+		</div>
+					
+					<input type="text" class="form-control" placeholder="글 제목을 입력해주세요" name="title" maxlength="50"">
+						<textarea type="text" class="form-control" placeholder="내용을 입력해주세요" name="content" maxlength="2048" style="height: 1000px;"></textarea>
+							
 					<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
 				</form>
 			</div>
 		
-		</div>
 		</section>
 			
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
