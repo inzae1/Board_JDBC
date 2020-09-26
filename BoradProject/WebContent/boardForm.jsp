@@ -115,12 +115,12 @@
 		        <table class="table table-striped" width="800" border="3" bordercolor="lightgray">
 		            <thead>
 			            <tr heigh="30">
-			                <td style="background-color: #337ab7; color: #fff;">글번호</td>
-			                <td style="background-color: #337ab7; color: #fff;">작성자</td>
-			                <td style="background-color: #337ab7; color: #fff;">제목</td>
-			                <td style="background-color: #337ab7; color: #fff;">작성일</td>
-			                <td style="background-color: #337ab7; color: #fff;">조회수</td>
-			                <td style="background-color: #337ab7; color: #fff;">추천수</td>
+			                <td style="background-color: #96BB7C; color: #fff;">글번호</td>
+			                <td style="background-color: #96BB7C; color: #fff;">작성자</td>
+			                <td style="background-color: #96BB7C; color: #fff;">제목</td>
+			                <td style="background-color: #96BB7C; color: #fff;">작성일</td>
+			                <td style="background-color: #96BB7C; color: #fff;">조회수</td>
+			                <td style="background-color: #96BB7C; color: #fff;">추천수</td>
 			            </tr>    
 			        </thead>
 			        <tbody>
