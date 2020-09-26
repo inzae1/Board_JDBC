@@ -20,6 +20,7 @@
 	    <link rel="stylesheet" href="css/magnific-popup.css"> 
 	    <link rel="stylesheet" href="css/flaticon.css">
 	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/bootstrap.css">
 	<title>전체 게시글</title>
     
     <style type="text/css">
@@ -114,13 +115,13 @@
 		<div id="wrap">
 		    <div id="board">
 		    	<h2><b>자유게시판</b></h2><br>
-		        <table class="table table-striped" width="800" border="3" bordercolor="lightgray">
+		        <table class="table table-striped" width="800" bordercolor="lightgray">
 		            <thead>
 			            <tr heigh="30">
 			                <td style="background-color: #96BB7C; color: #fff;">글번호</td>
-			                <td style="background-color: #96BB7C; color: #fff;">작성자</td>
 			                <td style="background-color: #96BB7C; color: #fff;">제목</td>
-			                <td style="background-color: #96BB7C; color: #fff;">작성일</td>
+			                <td style="background-color: #96BB7C; color: #fff;">작성자</td>
+			                <td style="background-color: #96BB7C; color: #fff;">날짜</td>
 			                <td style="background-color: #96BB7C; color: #fff;">조회수</td>
 			                <td style="background-color: #96BB7C; color: #fff;">추천수</td>
 			            </tr>    
@@ -133,8 +134,8 @@
 						%>
 							<tr>
 								<td><%=list.get(i).getBoard_no() %></td>
-								<td><%=list.get(i).getUserID() %></td>
 								<td><a href="boardDetail?boardNo=<%=list.get(i).getBoard_no()%>"><%=list.get(i).getTitle() %></a></td>
+								<td><%=list.get(i).getUserID() %></a></td>
 								<td><%=list.get(i).getReg_date() %></td>
 								<td><%=list.get(i).getViews() %></td>
 								<td><%=list.get(i).getLikes() %></td>
@@ -179,6 +180,8 @@
 		</div>
 		</div>
 		</section>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script src="js/bootstrap.js"></script>
 		    
  		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  		<script src="js/bootstrap.js"></script>
