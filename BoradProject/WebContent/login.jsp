@@ -25,14 +25,15 @@
 		          <li class="nav-item"><a href="main.jsp" class="nav-link">메인</a></li>
 		          <li class="nav-item"><a href="boardForm.jsp" class="nav-link">게시판</a></li>
 		          <li class="nav-item"><a href="map.jsp" class="nav-link">지도</a></li>
-				  <li class="dropdown">
-				  	<a class="dropdown-toggle" role="button"
-						aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
+				  <div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    접속
+					  </button>
 					<ul class="dropdown-menu">
-						<li><a href="login.jsp">로그인</a></li>
-						<li><a href="join.jsp">회원가입</a></li>
+						<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
+						<li><a class="dropdown-item" href="join.jsp">회원가입</a></li>
 					</ul>
-				  </li>
+				</div>
 		        </ul>
 		      </div>
 		    </div>
@@ -58,7 +59,7 @@
 									<label for="loginPw" style="font-size:15px">비밀번호</label>
 									<input type="password" name="pw" class="form-control" maxlength='20' size=20 label=loginPw placeholder="Password"><br><br>
 									<div id="checkid"></div>
-									<input type="submit" value="로그인" class="btn btn-primary form-control"><br>
+									<input type="submit" value="로그인" class="btn btn-primary form-control">
 									
 									<a href=findId.jsp style="font-size:10px; color:gray" >아이디 찾기</a> 
 									<a href=findPassword.jsp style="font-size:10px; color:gray" >/비밀번호 찾기</a>&nbsp;&nbsp;&nbsp;

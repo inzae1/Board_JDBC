@@ -41,36 +41,30 @@
 					// 로그인이 되어 있지 않다면
 					if(userID == null){
 				  %>
-				
-					<li class="nav-item dropdown">
-						<a href="#" class="dropdown-toggle" role="button"
-							aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="nav-link"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="login.jsp">로그인</a></li>
-							<li><a href="join.jsp">회원가입</a></li>
-						</ul>
-					</li>
-				
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" role="button"
-								aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">접속하기<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="login.jsp">로그인</a></li>
-								<li><a href="join.jsp">회원가입</a></li>
-							</ul>
-						</li>
+				<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    접속
+					  </button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
+						<li><a class="dropdown-item" href="join.jsp">회원가입</a></li>
+					</ul>
+				</li>
+				</div>
 				<%
 					} else {
 				%>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" role="button"
-								aria-haspopup="true" data-toggle="dropdown" aria-expaned="false">회원관리<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="logoutAction.jsp">로그아웃</a></li>
-								<li><a href="updateUserForm.jsp">정보수정</a></li>
-								<li><a href="deleteUser.jsp">회원탈퇴</a></li>
-							</ul>
-						</li>
+				<div class="dropdown">
+					  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    회원관리
+					  </button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="logoutAction.jsp">로그아웃</a></li>
+						<li><a class="dropdown-item" href="updateUserForm.jsp">정보수정</a></li>
+						<li><a class="dropdown-item" href="deleteUser.jsp">회원탈퇴</a></li>
+					</ul>
+				</li>
+				</div>
 				<%
 					}
 				%>
