@@ -234,8 +234,21 @@
 								<%
 									}else{
 								%>
-									<a onclick="return confirm('추천하시겠습니까?')" href="./likeAction.jsp?board_no=<%=board_no %>" class="btn btn-info"><i class="glyphicon glyphicon-thumbs-up"></i></a>
-									<a onclick="return confirm('비추천하시겠습니까?')" href="./unlikeAction.jsp?board_no=<%=board_no %>" class="btn btn-danger"><i class="glyphicon glyphicon-thumbs-down"></i></a>
+									<a onclick="button_event()" href="./likeAction.jsp?board_no=<%=board_no %>" class="btn btn-info"><i class="glyphicon glyphicon-thumbs-up"></i></a>
+									<script type="text/javascript">
+									function button_event(){
+										confirm('추천하시겠습니까?')
+										location.reload()
+										}
+									</script>
+									
+									<a onclick="button_event2()" href="./unlikeAction.jsp?board_no=<%=board_no %>" class="btn btn-danger"><i class="glyphicon glyphicon-thumbs-down"></i></a>
+									<script type="text/javascript">
+									function button_event2(){
+										confirm('비추천하시겠습니까?')
+										location.reload()
+										}
+									</script>
 								<%
 									}
 								%>
@@ -260,7 +273,11 @@
 				</div>
 			</div>
 		</section>
+		<script type="text/javascript">
 		
+		
+		
+		</script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
  		<script src="js/bootstrap.js"></script>
  	    <script src="js/jquery.min.js"></script>
