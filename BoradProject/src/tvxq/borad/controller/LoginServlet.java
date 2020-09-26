@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 			out.flush();
 		} else if (user == 1) {
 			// 로그인 성공 시 자유게시판 페이지로 이동 response.sendRedirect("main.jsp")
-			out.println("<script>alert('로그인에 성공했습니다.');");
+			out.println("<script>");
 			out.println("location.href='main.jsp'");
 			session.setAttribute("id", vo.getUserID());
 			//response.sendRedirect("main.jsp");

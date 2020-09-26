@@ -20,6 +20,7 @@ public class FindPassword extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
+		
 		UserDAO userDAO = new UserDAO();
 		
 		String password = userDAO.findUserPasswordById(id);
