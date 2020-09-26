@@ -23,7 +23,7 @@
     
     <style type="text/css">
         #wrap {
-            width: 800px;
+            width: 1200px;
             margin: 0 auto 0 auto;
         }
         #topForm{
@@ -150,10 +150,12 @@
 		
 		
 		<div class="container">
-			<div class="row">
-				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+			<div class="row no-gutters slider-text align-items-center">
+			<div id="wrap">
+		    <div id="board">
+				 <table class="table table-striped" width="800" border="3" bordercolor="lightgray">
 					<thead>
-						<tr>
+						<tr heigh="30">
 							<th colspan="3" style="background-color: #eeeeee; text-align: center;">게시판 글 보기</th>
 						</tr>		
 					</thead>
@@ -184,12 +186,15 @@
 						</tr>
 					</tbody>
 				</table>
+			</div>
+			</div>
 				
 				<div class="container">
 					<div class="row">
 					<%
 					if(repleList != null) {
 					%>
+			<div id="wrap">
 						<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 							<thead style="background-color: #eeeeee;">
 								<tr>
@@ -261,6 +266,7 @@
 					}
 				%>
 			</div>
+		</div>
 		</div>
 		
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
