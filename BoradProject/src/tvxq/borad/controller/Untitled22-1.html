@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- CSS -->
+		<style type="text/css">
+			/* class는 앞에 . */
+			.title{
+				color: blue;
+				text-align: center;
+			}
+			/* id는 앞에 # */
+			#resultView{}
+			/* h2{} */
+		</style>
+		<!-- Javasript -->
+		<script type="text/javascript">
+			var xhr; // 전역변수
+			// Javasript에서는 함수 앞에 function을 붙인다.
+			function startRequest(){
+				// 버튼을 눌렀을 때 어떤 요청이 진행되는지를 기술...
+				// 1. xhr 객체생성
+				xhr = new XMLHttpRequest();
+				// 2. 응답 
+				xhr.onreadystatechange = callback;
+				xhr.open("get", "DispatcherServlet");
+				
+				xhr.send(null); // 이때 서버로 날라간다.
+			}
+			// 응답
+			function callback(){
+				if(xhr.readyState == 4){
+					if(xhr.status == 200){
+						var text = xhr.responseText;
+						document.getElementById("resultView").innerHTML = text;
+					}
+				}
+			}
+		</script>
+	</head>

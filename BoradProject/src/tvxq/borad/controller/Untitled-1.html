@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>Insert title here</title>
+			<style type="text/css">
+				.title{color: blue; text-align: center;}
+			</style>
+	
+			<script type="text/javascript">
+				var xhr; //전역변수
+				function startRequest() {
+					xhr = new XMLHttpRequest();
+					//alert(xhr);
+					
+					xhr.onreadystatechange = callback;
+					xhr.open("get","DispatcherServlet");
+					
+					xhr.send(null); //이때 서버로 날라간다.
+				}
+				
+				function callback(){
+					if(xhr.readytState == 4){
+						if(xhr.status == 200){
+							var text = xhr.responseText;
+							document.getElementById("resultView").innerHTML = text;
+						}
+					}
+				}
+			</script>
+	</head>
+<body>
+<h2 class="title">Show Count</h2>
+<!--버튼 클릭하면 함수 호출되는것 : onclick=함수명()-->
+<input type="button" value="카운트 증가하기" onclick="startRequest()">
+<hr>
+<span id="resultView">
+
+</span>
+</body>
+</html>
